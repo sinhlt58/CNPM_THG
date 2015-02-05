@@ -1,4 +1,8 @@
-
+<?php /* Comments(cm) mình viết theo ý hiểu của mình các bạn nên tìm hiểu các hàm trên gg nhé !
+file setup.php khai biến mấy cái biền toàn cục và gọi mấy hàm, nói chung file đấy chạy đầu tiên
+sau đó cứ theo thứ tự từng dòng mà đợc nhé.
+ * 
+ *Cái folder admin đang làm dở nên không có cm nhé. */ ?>
 
 <?php include('config/setup.php'); ?>
 
