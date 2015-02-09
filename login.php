@@ -8,6 +8,7 @@ include('config/connection.php');
 
 if ($_POST) {
 	
+	//new khop thi moi lay duoc du lieu.
 	$query = "SELECT * FROM users WHERE email = '$_POST[email]' AND password = SHA1($_POST[password])";
 	$run = mysqli_query($dbc, $query);
 	

@@ -25,6 +25,23 @@
 			
 		});
 		
+		$(".btn-delete").on("click", function() {
+		
+			var selected = $(this).attr("id");
+			var pageid = selected.split("del_").join("");
+			
+			var confirmed = confirm("Are you sure want to delete this item?");
+			
+			if (confirmed == true) {
+				$.get("ajax/menu.php?id="+pageid);
+			
+				$("#page_"+pageid).remove();
+			
+			}
+								
+			//alert(selected);
+		});
+		
 	});
 	
 </script>

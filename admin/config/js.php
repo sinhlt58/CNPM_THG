@@ -47,7 +47,7 @@
 					
 			
 			//alert(selected);
-		})
+		});
 		
 		$("#sort-nav").sortable({
 			cursor: "move", 

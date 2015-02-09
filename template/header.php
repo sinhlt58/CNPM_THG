@@ -27,3 +27,4 @@ if(!isset($_SESSION['username'])){//Neu username chua duoc set thi ra trang logi
 		
 	<div id="wrap">		
 		<?php include(D_TEMPLATE.'/navigation.php')?>
+		
