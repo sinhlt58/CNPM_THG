@@ -1,3 +1,12 @@
+<?php
+# Start the session:
+session_start();
+
+if(!isset($_SESSION['username'])){//Neu username chua duoc set thi ra trang login.php
+	header('Location: login.php');
+}
+
+?>
 
 <?php include('config/setup.php'); ?>
 

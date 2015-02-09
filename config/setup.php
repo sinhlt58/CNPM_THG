@@ -32,5 +32,7 @@ if(!isset($path['call_parts'][0]) || $path['call_parts'][0] == ''){//kiểm tra 
 $page = data_post($dbc,$path['call_parts'][0]);
 $view = data_post_type($dbc, $page['type']);
 
+# User Setup:
+$user = data_user($dbc, $_SESSION['username']);
 
 ?>

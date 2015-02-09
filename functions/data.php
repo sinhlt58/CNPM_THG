@@ -14,6 +14,27 @@ function data_setting_value($dbc, $id){
 	return $data['value'];//trả về giá trị của mảng data ở vị trí value.
 			
 }
+function data_user($dbc, $id) {
+	
+	if (is_numeric($id)){
+		
+		$cond = "WHERE id = '$id'";
+		
+	} else {
+		
+		$cond = "WHERE email = '$id'";
+	}
+		
+	$query = "SELECT * FROM users $cond";
+	$result = mysqli_query($dbc, $query);
+
+	$data = mysqli_fetch_assoc($result);
+	
+	$data['fullname'] = $data['first_name'].' '.$data['last_name'];
+	$data['fullname_reverse'] = $data['last_name'].', '.$data['first_name'];
+	
+	return $data;
+}
 
 function data_post_type ($dbc, $id) {
 	$query = "SELECT * FROM post_types WHERE id=$id";

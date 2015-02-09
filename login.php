@@ -4,7 +4,7 @@
 session_start();
 
 # Database Connection Here...
-include('../config/connection.php');
+include('config/connection.php');
 
 if ($_POST) {
 	
@@ -25,7 +25,7 @@ if ($_POST) {
 <html>
 	<head>
 		
-		<title>ADMIN LOGIN</title>
+		<title>USERS LOGIN</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
 		<?php include('config/css.php'); ?>
@@ -41,7 +41,7 @@ if ($_POST) {
 		<div class="col-md-4 col-md-offset-4">
 			<div class = "panel panel-default">
 				<div class = "panel-heading">
-					<strong class = "panel-title">ADMIN LOGIN</strong>	
+					<strong class = "panel-title">USERS LOGIN</strong>	
 				</div>
 				<div class = "panel-body">	
 					<form action = "login.php" method = "post" role = "form">
