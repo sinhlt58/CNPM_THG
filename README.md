@@ -1,2 +1,0 @@
-# CNPM_THG
-aa
