@@ -20,60 +20,85 @@
 			
 			
 		?>
-		
-		<h3>New item</h3>
-		
-		<form class="form-inline" action="http://localhost/THG/THGv1.0/menu" method="POST" role="form">
-		
-			<div class="form-group">
-						
-					<label class="sr-only" for="food_name">Name</label>
-					<input class="form-control" type="text" value="" name="food_name" id="food_name" placeholder="Food name">
-						
-			</div>
-			
-			<div class="form-group">
-						
-					<label class="sr-only" for="food_price">Price</label>
-					<input class="form-control" type="text" value="" name="food_price" id="food_price" placeholder="Food Price">
-						
-			</div>
-			
-			<button type="submit" class="btn btn-default">Save</button>
-		
-		</form>
+	<form class="form-inline" action="http://localhost/THG/THGv1.0/menu" method="POST" role="form">
+		<div class="bs-example" data-example-id="simple-table">
+			<table class = "table table-striped">
+				<caption><h3>New item</h3></caption>
+				<thead>
+					<tr>
+						<td>
+							<h4>Food</h4>
+							<div class="form-group">
+								<label class="sr-only" for="food_name">Name</label>
+								<input class="form-control" type="text" value="" name="food_name" id="food_name">
+							</div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<h4>Price</h4>
+							<div class="form-group">
+								<label class="sr-only" for="food_price">Price</label>
+								<input class="form-control" type="text" value="" name="food_price" id="food_price">
+							</div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<button type="submit" class="btn btn-default"><i class="fa fa-plus"></i>    Add</button>
+						</td>
+					</tr>
+				</thead>
+			</table>
+		</div>	
+	</form>
 		
 	</div>		
 	
 	<div class="col-md-2"></div>
 	
 	<div class="col-md-6">
-		
-		<h3>Menu</h3>
-			<?php 
+		<!-- Stripped table to display menu -->
+		<div class="bs-example" data-example-id="simple-table">
+			<table class = "table table-striped">
+				<caption><h3>Menu</h3></caption>
+				<thead>
+					<th>#</th>
+					<td>Name</td>
+					<td>Price</td>
+					<td>Delete/Change</td>
+				</thead>
+				<tbody>
+					<?php 
 			
-				$query = "SELECT * FROM food WHERE user_id_food = $user[id]";
-				$result = mysqli_query($dbc, $query);
-				
-				$space = '------';
-				
-				while ($food_list = mysqli_fetch_assoc($result)) { ?>
-					
-					<div id="page_<?php echo $food_list['id']; ?>" class="list-group-item" >
-						
-						<h4 class="list-group-item-heading">
-							
-							<?php echo $food_list['food_name'].$space.$food_list['food_price']; ?>
-							
-							<span class="pull-right">								
-								<a href="#" id="del_<?php echo $food_list['id']; ?>" class="btn btn-delete"><i class="fa fa-trash-o"></i></a>					
-							</span>
-							
-						</h4>
-						 
-					</div>
-					
-				<?php } ?>
+						$query = "SELECT * FROM food WHERE user_id_food = $user[id]";
+						$result = mysqli_query($dbc, $query);
+						$food_count = 0;
+						while ($food_list = mysqli_fetch_assoc($result)) { ?>
+							<!-- Food ID, name, and price display in a row -->
+								<tr id="page_<?php echo $food_list['id']; ?>">
+										<th  scope="row"><?php echo ++$food_count; ?></th>
+										<td scope="row"><?php echo $food_list['food_name'] ?></td>
+										<td scope="row"><?php echo $food_list['food_price'] ?></td>
+										<td>
+											<button class = "button-danger">
+												<a href="#" id="del_<?php echo $food_list['id']; ?>" class="btn btn-delete"><i class="fa fa-trash-o"></i></a>
+											</button>
+											<button>
+												<a href="#" id="del_<?php echo $food_list['id']; ?>" class="btn btn-delete"><i class = "fa fa-bars"></i></a>
+											</button>
+										</td>
+									
+								</tr>
+							<!-- End of a row -->
+					<?php } ?>
+				</tbody>
+			</table>
+			<!-- End of table -->
+		</div>
+			
 				
 	</div>
 	
