@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2015 at 08:26 AM
+-- Generation Time: Feb 10, 2015 at 08:08 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -19,6 +19,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `thg`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `food`
+--
+
+CREATE TABLE IF NOT EXISTS `food` (
+`id` int(11) NOT NULL,
+  `user_id_food` int(11) NOT NULL,
+  `food_name` varchar(50) NOT NULL,
+  `food_price` double NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=71 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `food`
+--
+
+INSERT INTO `food` (`id`, `user_id_food`, `food_name`, `food_price`) VALUES
+(51, 5, 'coca', 12300),
+(68, 5, 'sada', 1231),
+(70, 5, 'rice', 12345);
 
 -- --------------------------------------------------------
 
@@ -66,8 +88,8 @@ CREATE TABLE IF NOT EXISTS `posts` (
 --
 
 INSERT INTO `posts` (`id`, `user_id`, `type`, `slug`, `label`, `title`, `header`, `body`) VALUES
-(1, 1, 1, 'home', 'Home', 'Home', 'Welcome to THG 1.0', '<p>Long page.....</p>'),
-(2, 3, 1, 'menu', 'Menu', 'Menu', 'Phien ban tao thuc don v1.0', '<div class="row">\r\n<div class="col-md-6">\r\n<h3>Them mon an here!</h3>\r\n</div>\r\n<div class="col-md-6">\r\n<h3>Menu!</h3>\r\n</div>\r\n</div>'),
+(1, 1, 1, 'home', 'Home', 'Home', 'Welcome to THG version 1.0', '<p>Long page.....</p>'),
+(2, 3, 1, 'menu', 'Menu', 'Menu', 'Menu Creator version 1.0', '<div class="row">\r\n<div class="col-md-6">\r\n<h3>&nbsp;</h3>\r\n</div>\r\n</div>'),
 (5, 1, 1, 'order', 'Order', 'Order', 'Coming soon ...', '');
 
 -- --------------------------------------------------------
@@ -124,7 +146,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(200) NOT NULL,
   `status` int(1) NOT NULL DEFAULT '1',
   `avatar` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -134,11 +156,18 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `stat
 (1, 'sinh', 'black', 'sinhlt58@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, '1423466156910.png'),
 (2, 'kitty', 'kitty', 'kitty@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1, ''),
 (3, 'Big', 'Big', 'Big@gmail.com', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 1, ''),
-(4, 'Troll', 'Freak', 'freak@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 0, '');
+(4, 'Troll', 'Freak', 'freak@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 0, ''),
+(5, 'Trieu', 'Dang', 'dangtrieu25@gmail.com', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 1, '');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `food`
+--
+ALTER TABLE `food`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `navigation`
@@ -175,6 +204,11 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `food`
+--
+ALTER TABLE `food`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=71;
+--
 -- AUTO_INCREMENT for table `navigation`
 --
 ALTER TABLE `navigation`
@@ -193,7 +227,7 @@ MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

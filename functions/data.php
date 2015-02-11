@@ -74,5 +74,35 @@ function data_post($dbc, $id){
 	
 	return $data;
 }
+/*
+ * HÀM VŨ ĐỨC VIẾT HÔM 10/2/2015.
+ Hàm lấy giữ liệu từ một bảng bất kì, trả lại mảng chứa dữ liệu của bảng 
+function data_query($arr, $tbl, $param=''){
+	global $dbc;
+	$str = "SELECT $arr FROM $tbl $param";
+	$result = mysqli_query($dbc, $str);
+	if($result->num_rows > 0){
+		while ($row = mysqli_fetch_array($result)) {
+			$rows[] = $row;
+		}
+		return $rows;
+	}
+	else {
+		return false;
+	}
+}
+
+ Hàm sửa dữ liệu của bảng 
+function data_update($arr, $tbl, $param){
+	global $dbc;
+	$str = "UPDATE $tbl SET $arr $param";
+	$result = mysqli_query($dbc, $str);
+	if($result) return true;
+	else {
+		echo mysqli_error($dbc);
+		return false;
+	}
+}
+*/
 
 ?>
