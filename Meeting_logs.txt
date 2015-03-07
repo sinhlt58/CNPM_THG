@@ -1,0 +1,11 @@
+﻿/* 04/04/2015 */
+1. Sửa đổi giao diện Menu và thu gọn cấu trúc project
+-----------------
+
+/* 06/04/2015 */
+1. Cập nhật giap diện Order
+-----------------
+
+/* 07/04/2015 */
+1. Hoàn thành login form và sign up form
+-----------------
