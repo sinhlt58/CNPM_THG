@@ -74,6 +74,24 @@ function data_post($dbc, $id){
 	
 	return $data;
 }
+
+function restaurant_data($dbc){
+
+	if (isset($_POST['restaurantId'])){
+		$_SESSION['restaurantId'] = $_POST['restaurantId'];
+
+	}else{
+		//do some thing.
+	}
+	if (isset($_SESSION['restaurantId'])){
+		$query = "SELECT * FROM restaurants WHERE id=$_SESSION[restaurantId]";
+		$result = mysqli_query($dbc, $query);
+
+		$data = mysqli_fetch_assoc($result);
+
+		return $data;
+	}
+}
 /*
  * HÀM VŨ ĐỨC VIẾT HÔM 10/2/2015.
  Hàm lấy giữ liệu từ một bảng bất kì, trả lại mảng chứa dữ liệu của bảng 

@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
 
 <!-- Optional theme -->
-<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">
+<!--<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">-->
 
 <!-- jQuery CSS-->
 <link rel="stylesheet" href="lib/jquery-ui-1.11.2/jquery-ui.min.css" />
@@ -102,5 +102,11 @@
 	}
 	/*----------End Food Item-----------------*/	
 	
-	/*End menu--------------------------*/
+	/*End menu--------------------------------
+
+	/*---------New order ----------------*/
+
+
+
+	/*---------End New order------------*/
 </style>

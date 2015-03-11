@@ -7,10 +7,10 @@ if (isset($_GET['typeRequestFc'])){
 	$typeRequestFc = $_GET['typeRequestFc'];
 
 	if ($typeRequestFc == "add"){//add a new category.
-		$userId = $_GET['user-id'];
+		$restaurantId = $_GET['restaurantId'];
 		$nameFc = $_GET['nameFc'];
 
-		$query = "INSERT INTO food_categories (user_id, name) VALUES ($userId, '$nameFc')";
+		$query = "INSERT INTO food_categories (restaurant_id, name) VALUES ($restaurantId, '$nameFc')";
 		$result = mysqli_query($dbc, $query);
 
 		$lastFcId = mysqli_insert_id($dbc);

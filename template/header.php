@@ -17,5 +17,5 @@
 <body>
 		
 	<div id="wrap">	
-		<?php include(D_TEMPLATE.'/navigation.php')?>
+
 		

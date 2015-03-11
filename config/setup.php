@@ -17,16 +17,11 @@ include ('functions/data.php');
 include ('functions/template.php');
 
 # User Setup:
-/* 
- * Them 1 bien $checkPassword de kiem tra sai mat khau.
- * Them phan kiemtra sign-up
- * By: HaiTrieu
- * */
-#----Login
-$checkPassword = check_user($dbc);
-#----Signup
-$checkSignUp = validSignUp($dbc);
-$user = data_user($dbc, $_SESSION['username']);
+check_user($dbc);
+$user = data_user($dbc, $_SESSION['username']);//bien toan cuc.
+
+# Restaurant Setup:
+$restaurant = restaurant_data($dbc);//bien toan cuc.
 
 # Site and Page Setup:
 $site_title = 'THG 1.0';

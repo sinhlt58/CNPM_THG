@@ -42,6 +42,12 @@ function selected($value1, $value2, $return) {
 	
 }
 
+function isUserLoggedIn(){
+  if (isset($_SESSION['username'])){
+    return true;
+  }else return false;
+}
+
 
 function check_path($slug, $dbc){
   if(isset($slug)){
@@ -50,7 +56,7 @@ function check_path($slug, $dbc){
     $result = mysqli_query($dbc, $query);
 
     if(mysqli_num_rows($result) == 0){
-      if (isset($_SESSION['username'])){
+      if (isUserLoggedIn()){
         header('Location: menu');
       }else {
         header('Location: home');
@@ -58,6 +64,11 @@ function check_path($slug, $dbc){
 
     }else{
       //giu nguen gia tri cua $path['call_parts'][0].
+      if (isset($_SESSION['restaurantId'])){
+        if ($slug == 'sign-in'){
+          header('Location: home');
+        }
+      }
     }
   }
 }

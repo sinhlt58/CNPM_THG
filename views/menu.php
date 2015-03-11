@@ -1,18 +1,18 @@
 <div class="row">
 	<div class="col-sm-2"></div>
-	
+
 	<div class="col-sm-8" id="menu">
 	
 			<div class="row list-group-item list-group-item-info">
 				<h4 class="text-center"><b>Menu</b>
-					<button type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#modal-add-fc">+</button>
+					<button type="button" class="btn btn-default btn-sm pull-right" data-toggle="modal" data-target="#modal-add-fc">+</button>
 				</h4>
 				
 			</div>
 			
 			<?php 
 					
-				$query = "SELECT * FROM food_categories WHERE user_id=$user[id] ORDER BY id DESC";
+				$query = "SELECT * FROM food_categories WHERE restaurant_id=$restaurant[id] ORDER BY id DESC";
 				$result = mysqli_query($dbc, $query);
 				
 				while($list_fc = mysqli_fetch_assoc($result)) { ?>
@@ -24,10 +24,10 @@
 						</div>
 						<div class="col-sm-4">
 							<div class="btn-group btn-group-sm pull-right">
-						  		<button type="button" class="btn btn-primary b-add-fi" data-toggle="modal" data-target="#modal-add-fi" fc-id='<?php echo $list_fc['id']; ?>'>+</button>
-						  		<button type="button" class="btn btn-primary b-edit-fc no-edit-fc">-</button>
-						  		<button type="button" class="btn btn-primary b-save-fc edit-fc" fc-id='<?php echo $list_fc['id']; ?>'>s</button>
-						  		<button type="button" class="btn btn-primary b-delete-fc" fc-id='<?php echo $list_fc['id']; ?>'>x</button>
+						  		<button type="button" class="btn btn-default b-add-fi" data-toggle="modal" data-target="#modal-add-fi" fc-id='<?php echo $list_fc['id']; ?>'>+</button>
+						  		<button type="button" class="btn btn-default b-edit-fc no-edit-fc">-</button>
+						  		<button type="button" class="btn btn-default b-save-fc edit-fc" fc-id='<?php echo $list_fc['id']; ?>'>s</button>
+						  		<button type="button" class="btn btn-default b-delete-fc" fc-id='<?php echo $list_fc['id']; ?>'>x</button>
 				  			</div>						
 						</div>
 					</div>
@@ -48,9 +48,9 @@
 								</div>							
 								<div class="col-sm-4">
 									<div class="btn-group btn-group-sm pull-right">
-								  		<button type="button" class="btn btn-primary b-edit-fi no-edit-fi">-</button>
-								  		<button type="button" class="btn btn-primary b-save-fi edit-fi" fi-id='<?php echo $list_food['id']; ?>'>s</button>
-								  		<button type="button" class="btn btn-primary b-delete-fi" fi-id='<?php echo $list_food['id']; ?>'>x</button>
+								  		<button type="button" class="btn btn-default b-edit-fi no-edit-fi">-</button>
+								  		<button type="button" class="btn btn-default b-save-fi edit-fi" fi-id='<?php echo $list_food['id']; ?>'>s</button>
+								  		<button type="button" class="btn btn-default b-delete-fi" fi-id='<?php echo $list_food['id']; ?>'>x</button>
 						  			</div>						
 								</div>
 							</div>
@@ -73,7 +73,7 @@
 				
 				<div class="modal-body">
 		            <label for="fc-name" class="control-label">Name Category:</label>
-		            <input type="text" class="form-control" value="here" id="fc-name" user-id='<?php echo $user['id'];?>'>					
+		            <input type="text" class="form-control" value="here" id="fc-name" restaurant-id='<?php echo $restaurant['id'];?>'>
 				</div>
 				
 				<div class="modal-footer">
@@ -117,10 +117,10 @@
 				</div>
 				<div class="col-sm-4">
 					<div class="btn-group btn-group-sm pull-right">
-						<button type="button" class="btn btn-primary b-add-fi" data-toggle="modal" data-target="#modal-add-fi" fc-id='{{fc_id}}'>+</button>
-				  		<button type="button" class="btn btn-primary b-edit-fc no-edit-fc">-</button>
-				  		<button type="button" class="btn btn-primary b-save-fc edit-fc" fc-id='{{fc_id}}'>s</button>
-				  		<button type="button" class="btn btn-primary b-delete-fc" fc-id='{{fc_id}}'>x</button>
+						<button type="button" class="btn btn-default b-add-fi" data-toggle="modal" data-target="#modal-add-fi" fc-id='{{fc_id}}'>+</button>
+				  		<button type="button" class="btn btn-default b-edit-fc no-edit-fc">-</button>
+				  		<button type="button" class="btn btn-default b-save-fc edit-fc" fc-id='{{fc_id}}'>s</button>
+				  		<button type="button" class="btn btn-default b-delete-fc" fc-id='{{fc_id}}'>x</button>
 		  			</div>						
 				</div>
 			</div>
@@ -139,9 +139,9 @@
 				</div>							
 				<div class="col-sm-4">
 					<div class="btn-group btn-group-sm pull-right">
-				  		<button type="button" class="btn btn-primary b-edit-fi no-edit-fi">-</button>
-				  		<button type="button" class="btn btn-primary b-save-fi edit-fi" fi-id='{{fi_id}}'>s</button>
-				  		<button type="button" class="btn btn-primary b-delete-fi" fi-id='{{fi_id}}'>x</button>
+				  		<button type="button" class="btn btn-default b-edit-fi no-edit-fi">-</button>
+				  		<button type="button" class="btn btn-default b-save-fi edit-fi" fi-id='{{fi_id}}'>s</button>
+				  		<button type="button" class="btn btn-default b-delete-fi" fi-id='{{fi_id}}'>x</button>
 		  			</div>						
 				</div>
 			</div>						
