@@ -1,4 +1,7 @@
-<?php /*Tai khoan mac dinh thg@gmail.com pass: 123*/?>
+<?php /*Tai khoan mac dinh thg@gmail.com pass: 123*/
+
+
+?>
 <div class = "row">
 	<div class="col-md-4 col-md-offset-4">
 		<div class = "panel panel-default">

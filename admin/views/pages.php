@@ -12,7 +12,7 @@
 			
 		<?php
 		
-			$query = "SELECT * FROM posts WHERE type = 1 ORDER BY title ASC";
+			$query = "SELECT * FROM posts";
 			$result = mysqli_query($dbc, $query);
 			
 			while($list = mysqli_fetch_assoc($result)){ 

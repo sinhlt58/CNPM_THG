@@ -2,7 +2,7 @@
 
     <div class="col-md-3" id="save-order">
 
-        <div class="well sidebar">
+        <div class="well">
             <table class="table">
                 <thead>
                     <td></td>
@@ -31,7 +31,7 @@
             </table>
         </div>
 
-        <a id="btn-save-order" class="btn btn-success btn-lg btn-block" href="<?php echo NAME_DOMAIN.'/order'?>" restaurant-id="<?php echo $restaurant['id'];?>">
+        <a id="btn-save-order" class="btn btn-success btn-lg btn-block"  restaurant-id="<?php echo $restaurant['id'];?>">
             <span class="glyphicon glyphicon-ok"></span>Save
         </a>
 

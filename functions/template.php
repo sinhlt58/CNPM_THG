@@ -4,7 +4,7 @@
  lên thanh navigation, nó được gọi trong file template/navigation.php*/
 function nav_main($dbc, $path){
 	
-	if(isUserLoggedIn()){
+	if(is_sign_in()){
 		$target = 'WHERE target = "sign_in"';
 	}else{
 		$target = 'WHERE target = "not_sign_in"';

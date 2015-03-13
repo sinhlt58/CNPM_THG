@@ -55,9 +55,13 @@ $(document).ready(function () {
             var totalPrice = $totalAmountPrice.attr('total-price');//lay tong tien.
             var restaurantId = $(this).attr('restaurant-id'); //lay id restaurant.
             var listItemId = [];//lay id cac mon an.
+            var listItemAmount = [];//lay amount cac mon an tuong ung voi id.
             $bodySaveOrder.find('[item-id]').each(function () {
                 var itemId = $(this).attr('item-id');
+                var itemAmount = $(this).find('[item-amount]').attr('item-amount');
+
                 listItemId.push(itemId);
+                listItemAmount.push(itemAmount);
             });
             //day len server.
             var url = 'ajax/new-order.php';
@@ -65,13 +69,21 @@ $(document).ready(function () {
                 valueTable: valueTable,
                 totalPrice: totalPrice,
                 restaurantId: restaurantId,
-                listItemId: listItemId
+                listItemId: listItemId,
+                listItemAmount: listItemAmount
             }
             $.ajax({
                 type: 'POST',
                 url: url,
                 data: data
             });
+
+            var href = "http://localhost/THG/THGv1.0/order";
+            //doi 1/2 giay roi moi doi trang khong thi khong load kip du lieu :)).
+            //hic mai moi nghi ra duoc hohoho.
+            setTimeout(function(){
+                window.location.href = href;
+            }, 500);
 
         });
     }

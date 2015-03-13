@@ -13,7 +13,7 @@
 			</ul>
 			<div class="pull-right">
 					
-				<?php if(isUserLoggedIn()){ ?>
+				<?php if(is_sign_in()){ ?>
 					<ul class="nav navbar-nav ">
 						<li class="dropdown">
 							
@@ -27,7 +27,7 @@
 					</ul>	
 				<?php }?>
 				
-				<?php if(!isUserLoggedIn()){ ?>
+				<?php if(!is_sign_in()){ ?>
 					<ul class="nav navbar-nav">
 						<li>
 							<a href="<?php echo NAME_DOMAIN; ?>/sign-in"><strong>Sign In</strong></a>

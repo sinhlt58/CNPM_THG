@@ -29,9 +29,9 @@ $debug = data_setting_value($dbc, 'debug-status');
 
 $path = get_path();
 $slug = $path['call_parts'][0];
-check_path($slug, $dbc);
+check_slug($slug, $dbc);
 
-
+# Prepare to load page.
 $page = data_post($dbc, $slug);
 $view = data_post_type($dbc, $page['type']);
 
