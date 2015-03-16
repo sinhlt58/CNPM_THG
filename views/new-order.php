@@ -1,5 +1,11 @@
 <div class="row">
 
+    <button id="show-me-how" class="btn btn-default">Show me how</button>
+    <a id ="to-show" data-intro='Hellow this is the step 1.' href="http://www.google.com">Oh</a>
+
+</div>
+<div class="row">
+
     <div class="col-md-3" id="save-order">
 
         <div class="well">
@@ -7,8 +13,8 @@
                 <thead>
                     <td></td>
                     <td>
-                        <span id="table-number" style="cursor: pointer;">TABLE: click me..</span>
-                        <input id="input-table-number" type="number" min="1" max="<?php echo $restaurant['number_of_table'];?>" value="1">
+                        <span id="table-number" style="cursor: pointer;" title="click me to choose table.">TABLE: click me..</span>
+                        <input id="input-table-number" type="number" min="0" max="<?php echo $restaurant['number_of_table'];?>" value="1">
                     </td>
                     <td></td>
                 </thead>
@@ -31,7 +37,7 @@
             </table>
         </div>
 
-        <a id="btn-save-order" class="btn btn-success btn-lg btn-block"  restaurant-id="<?php echo $restaurant['id'];?>">
+        <a id="btn-save-order" class="btn btn-success btn-lg btn-block" title="Click to send me." restaurant-id="<?php echo $restaurant['id'];?>">
             <span class="glyphicon glyphicon-ok"></span>Save
         </a>
 

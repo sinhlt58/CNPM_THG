@@ -75,14 +75,17 @@ function data_post($dbc, $id){
 	return $data;
 }
 
+function check_restaurant(){
+	if (isset($_POST['restaurantId'])){
+
+		$_SESSION['restaurantId'] = $_POST['restaurantId'];
+		header('Location: menu');
+
+	}
+}
+
 function restaurant_data($dbc){
 
-	if (isset($_POST['restaurantId'])){
-		$_SESSION['restaurantId'] = $_POST['restaurantId'];
-
-	}else{
-		//do some thing.
-	}
 	if (isset($_SESSION['restaurantId'])){
 		$query = "SELECT * FROM restaurants WHERE id=$_SESSION[restaurantId]";
 		$result = mysqli_query($dbc, $query);

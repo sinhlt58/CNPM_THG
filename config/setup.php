@@ -16,11 +16,14 @@ include ('functions/sandbox.php');
 include ('functions/data.php');
 include ('functions/template.php');
 
+$_SESSION['status_user_page'] = status_user_page();
+
 # User Setup:
-check_user($dbc);
+check_user($dbc, $slug);
 $user = data_user($dbc, $_SESSION['username']);//bien toan cuc.
 
 # Restaurant Setup:
+check_restaurant();
 $restaurant = restaurant_data($dbc);//bien toan cuc.
 
 # Site and Page Setup:
@@ -29,6 +32,7 @@ $debug = data_setting_value($dbc, 'debug-status');
 
 $path = get_path();
 $slug = $path['call_parts'][0];
+
 check_slug($slug, $dbc);
 
 # Prepare to load page.

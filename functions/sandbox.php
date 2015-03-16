@@ -54,6 +54,23 @@ function is_choose_restaurant(){
   }else return false;
 }
 
+function status_user_page(){
+  $not_sign_in = 1;
+  $signed_in = 2;
+  $choose_restaurant = 3;
+
+  if (is_sign_in()){
+    if (is_choose_restaurant()){
+      return $choose_restaurant;
+    }
+    else{
+      return $signed_in;
+    }
+  }else{
+    return $not_sign_in;
+  }
+}
+
 function check_slug(&$slug, $dbc){
   if(!empty($slug)){
 
@@ -64,28 +81,35 @@ function check_slug(&$slug, $dbc){
       header('Location: not-found');
 
     }else{
-      $not_sign_in = 1;
-      $choose_restaurant = 3;
 
       $page_type_data = mysqli_fetch_assoc($result);
       $page_type = $page_type_data['type'];
 
-      if (is_sign_in()){//neu dang nhap roi.
+      $not_sign_in = 1;
+      $signed_in = 2;
+      $choose_restaurant = 3;
 
-        if (is_choose_restaurant()) {//da chon 1 nha hang nao day.
+      if ($_SESSION['status_user_page'] === $not_sign_in){
 
-          if ($page_type != $choose_restaurant)
+          if ($page_type != $not_sign_in) $slug = 'not-found';
+
+      }else if ($_SESSION['status_user_page'] === $signed_in){
+
+        if ($page_type == $not_sign_in) header('Location: views/logout.php');
+
+      }else if ($_SESSION['status_user_page'] === $choose_restaurant){
+
+          if($slug == 'restaurants'){
+
+            $_SESSION['status_user_page'] = $signed_in;
+            unset($_SESSION['restaurantId']);
+
+          }
+
+          if($page_type == $not_sign_in)
             header('Location: views/logout.php');
-
-        }else{//chua chon nha hang. (tuc la dang o page restaurants.)
-
-        }
-      }else{//chua dang nhap.
-
-        if ($page_type != $not_sign_in)//new vao cac page khac loai 1 se day ra page not-found.
-          $slug = 'not-found';
-
       }
+
     }
   }else header('Location: home');
 }

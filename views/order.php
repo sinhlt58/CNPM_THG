@@ -7,7 +7,12 @@
     </div>
     <div class="col-md-8">
 
-        <div class="row">
+        <div class="row" id="show-orders">
+
+            <div>
+
+            </div>
+
             <?php
 
             $query = "SELECT * FROM orders WHERE restaurant_id = $restaurant[id] ORDER BY id DESC";

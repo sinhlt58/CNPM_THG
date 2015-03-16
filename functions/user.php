@@ -9,6 +9,7 @@ function check_user($dbc){
         if(mysqli_num_rows($run) == 1){
 
             $_SESSION['username'] = $_POST['email'];
+
             header('Location: restaurants');
             return true;
 
