@@ -18,6 +18,17 @@ include ('functions/template.php');
 
 $_SESSION['status_user_page'] = status_user_page();
 
+/*
+ * Them 1 bien $checkPassword de kiem tra sai mat khau.
+ * Them phan kiemtra sign-up
+ * By: HaiTrieu
+ * */
+#----Login
+$checkPassword = check_user($dbc);
+#----Signup
+$checkSignUp = validSignUp($dbc);
+
+
 # User Setup:
 check_user($dbc, $slug);
 $user = data_user($dbc, $_SESSION['username']);//bien toan cuc.
