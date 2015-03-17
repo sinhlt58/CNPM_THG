@@ -3,7 +3,7 @@
 ?>
 
 <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="lib/bootstrap-3.3.2-dist/css/bootstrap.min.css">
 
 <!-- Optional theme -->
 <!--<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">-->
@@ -18,12 +18,12 @@
 
 <style>
 	html {
-	  position: relative;
-	  min-height: 100%;
+		position: relative;
+		min-height: 100%;
 	}
 	body {
-	  /* Margin bottom by footer height */
-	  margin-bottom: 60px;
+		/* Margin bottom by footer height */
+		margin-bottom: 60px;
 	}
 	#wrap {
 		min-heigt: 100%;
@@ -33,12 +33,12 @@
 	}
 	
 	#footer {
-	  position: absolute;
-	  bottom: 0;
-	  width: 100%;
-	  /* Set the fixed height of the footer here */
-	  height: 60px;
-	  background-color: #f5f5f5;
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		/* Set the fixed height of the footer here */
+		height: 60px;
+		background-color: #f5f5f5;
 	}
 	
 	#btn-debug{
@@ -56,20 +56,20 @@
 		box-shadow: 2px 2px 5px #CCCCCC;
 	}
 	#console-debug pre{
-			
+		
 	}
 
-/*----- Accordion -----*/
+	/*----- Accordion -----*/
 	.accordion, .accordion * {
-	    -webkit-box-sizing:border-box; 
-	    -moz-box-sizing:border-box; 
-	    box-sizing:border-box;
+		-webkit-box-sizing:border-box; 
+		-moz-box-sizing:border-box; 
+		box-sizing:border-box;
 	}	
 	.accordion {
-	    overflow:hidden;
-	    box-shadow:0px 1px 3px rgba(0,0,0,0.25);
-	    border-radius:3px;
-	    background:#f7f7f7;
+		overflow:hidden;
+		box-shadow:0px 1px 3px rgba(0,0,0,0.25);
+		border-radius:3px;
+		background:#f7f7f7;
 	}
 	
 	/*Menu-------------------------------*/
@@ -109,4 +109,30 @@
 
 
 	/*---------End New order------------*/
+
+	/*--------- Order ----------------*/
+
+	.pin {
+		background: #FEFEFE;
+		box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+		background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+
+	}
+
+	.pin p {
+		margin-bottom: 0px;
+
+	}
+
+	.pin:hover {
+		background: #ebebeb;
+		cursor: pointer;
+	}
+
+	.pin:active {
+		background: #ffffe6;
+	}
+
+	/*--------- End Order ------------*/
+
 </style>

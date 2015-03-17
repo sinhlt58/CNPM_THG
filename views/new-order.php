@@ -1,11 +1,5 @@
 <div class="row">
 
-    <button id="show-me-how" class="btn btn-default">Show me how</button>
-    <a id ="to-show" data-intro='Hellow this is the step 1.' href="http://www.google.com">Oh</a>
-
-</div>
-<div class="row">
-
     <div class="col-md-3" id="save-order">
 
         <div class="well">
@@ -52,8 +46,8 @@
 
             while($list_fc = mysqli_fetch_assoc($result)) { ?>
 
-                <div>
-                    <h6 class="text-center"><b><?php echo $list_fc['name']; ?></b></h6>
+                <div class="row">
+                    <h4 class="text-center"><b><?php echo $list_fc['name']; ?></b></h4>
 
                     <?php
                     $query2 = "SELECT * FROM food WHERE fc_id=$list_fc[id] ORDER BY id DESC";
@@ -65,12 +59,12 @@
                             $itemPrice = $list_food['food_price'];
                             $itemId = $list_food['id'];
                         ?>
-                        <button class="item-on-choose-order" item-name="<?php echo $itemName?>"  item-price="<?php echo $itemPrice;?>" item-id="<?php echo $itemId?>">
-                            <div style="width: 80px; height: 80px;">
+                        <div class="pin item-on-choose-order col-md-2" style="vertical-align: middle; padding:10px; margin:15px;" item-name="<?php echo $itemName?>"  item-price="<?php echo $itemPrice;?>" item-id="<?php echo $itemId?>">
+                            <div style="" align="center">
                                 <span><?php echo $itemName;?></span>
                                 <p><?php echo $itemPrice;?>$</p>
                             </div>
-                        </button>
+                        </div>
 
                     <?php } ?>
                 </div>
