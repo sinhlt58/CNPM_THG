@@ -23,9 +23,8 @@ $_SESSION['status_user_page'] = status_user_page();
  * Them phan kiemtra sign-up
  * By: HaiTrieu
  * */
-#----Login
-$checkPassword = check_user($dbc);
-#----Signup
+ 
+#----Signup8/
 $checkSignUp = validSignUp($dbc);
 
 
