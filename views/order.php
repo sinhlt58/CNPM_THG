@@ -1,4 +1,7 @@
+
 <div class="row">
+
+    <div id="load"></div>
 
     <div class="col-md-2">
         <a class="btn btn-default btn-lg btn-block" href="<?php echo NAME_DOMAIN.'/new-order' ?>">
@@ -21,9 +24,16 @@
             while ($list_orders = mysqli_fetch_assoc($result)){ ?>
             <?php
 
-            $table_order = $list_orders['table_order'];
-            $total_price = $list_orders['total_price'];
-            $order_id = $list_orders['id'];
+                $table_order = $list_orders['table_order'];
+                $total_price = $list_orders['total_price'];
+                $order_id = $list_orders['id'];
+                $time_created = $list_orders['created'];
+                $creator = $list_orders['creator'];
+
+                $timeAgoObject = new convertToAgo();
+                $ts = date('y-m-d G:i:s', $time_created);
+                $convertedTime = ($timeAgoObject->convert_datetime($ts));
+                $when = ($timeAgoObject->makeAgo($convertedTime));
 
             ?>
             <div class="pin col-md-3" style="margin: 15px 15px; padding: 10px;">
@@ -62,6 +72,12 @@
                                         <td><p style="text-align: left;  padding: 10px;">Total</p></td>
                                         <td></td>
                                         <td><p style="text-align: right;  padding: 12px;" class="ng-binding" ><?php echo $total_price;?>$</p></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td><p style="text-align: left;  padding: 10px;"><?php echo $creator;?></p></td>
+                                        <td></td>
+                                        <td><p style="text-align: right;  padding: 12px;" class="ng-binding" ><?php echo $when;?></p></td>
                                     </tr>
                                 </tbody></table>
             </div>

@@ -35,11 +35,9 @@ function get_slug($dbc, $url) {
 
 
 function selected($value1, $value2, $return) {
-	
 	if ($value1 == $value2){
 		echo $return;
 	}
-	
 }
 
 function is_sign_in(){
@@ -95,7 +93,7 @@ function check_slug(&$slug, $dbc){
 
       }else if ($_SESSION['status_user_page'] === $signed_in){
 
-        if ($page_type == $not_sign_in) header('Location: views/logout.php');
+        if ($page_type != $signed_in) header('Location: restaurants');
 
       }else if ($_SESSION['status_user_page'] === $choose_restaurant){
 
@@ -107,7 +105,7 @@ function check_slug(&$slug, $dbc){
           }
 
           if($page_type == $not_sign_in)
-            header('Location: views/logout.php');
+            header('Location: menu');
       }
 
     }

@@ -1,6 +1,6 @@
 <div class="row">
 
-    <div class="col-md-3" id="save-order">
+    <div class="col-md-3" id="save-order" user-full-name="<?php echo $user['fullname'];?>">
 
         <div class="well">
             <table class="table">
@@ -31,7 +31,7 @@
             </table>
         </div>
 
-        <a id="btn-save-order" class="btn btn-success btn-lg btn-block" title="Click to send me." restaurant-id="<?php echo $restaurant['id'];?>">
+        <a id="btn-save-order" class="btn btn-success btn-lg btn-block" restaurant-id="<?php echo $restaurant['id'];?>">
             <span class="glyphicon glyphicon-ok"></span>Save
         </a>
 

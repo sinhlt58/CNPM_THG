@@ -11,9 +11,6 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 
-<!-- Intro -->
-<script src="lib/intro.js-1.0.0/intro.js"></script>
-
 <!-- Mustache -->
 <script src="js/mustache.min.js"></script>
 

@@ -1,4 +1,7 @@
 <?php
+# Timezone.
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+
 error_reporting(0);
 # Start the session:
 session_start();
@@ -8,13 +11,14 @@ include('config/connection.php');
 
 # Constants:
 DEFINE('D_TEMPLATE', 'template');
-DEFINE('NAME_DOMAIN', 'http://localhost/THG/THGv1.0');
+DEFINE('NAME_DOMAIN', 'http://localhost/THG');
 
 # Function:
 include ('functions/user.php');
 include ('functions/sandbox.php');
 include ('functions/data.php');
 include ('functions/template.php');
+include ('classes/time_ago.php');
 
 $_SESSION['status_user_page'] = status_user_page();
 
@@ -23,8 +27,9 @@ $_SESSION['status_user_page'] = status_user_page();
  * Them phan kiemtra sign-up
  * By: HaiTrieu
  * */
- 
-#----Signup8/
+#----Login
+//$checkPassword = check_user($dbc);
+#----Signup
 $checkSignUp = validSignUp($dbc);
 
 

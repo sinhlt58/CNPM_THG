@@ -51,6 +51,7 @@ $(document).ready(function () {
 
     function pushOrder() {
         $saveOrder.delegate('#btn-save-order', 'click', function () {
+            var userFullName = $saveOrder.attr('user-full-name');
             var valueTable = $inputTableNumber.val(); //lay ban.
             var totalPrice = $totalAmountPrice.attr('total-price');//lay tong tien.
             var restaurantId = $(this).attr('restaurant-id'); //lay id restaurant.
@@ -66,6 +67,7 @@ $(document).ready(function () {
             //day len server.
             var url = 'ajax/new-order.php';
             var data = {
+                userFullName: userFullName,
                 valueTable: valueTable,
                 totalPrice: totalPrice,
                 restaurantId: restaurantId,
@@ -78,7 +80,7 @@ $(document).ready(function () {
                 data: data
             });
 
-            var href = "http://localhost/THG/THGv1.0/order";
+            var href = 'http://localhost/THG/order';
             //doi 1/2 giay roi moi doi trang khong thi khong load kip du lieu :)).
             //hic mai moi nghi ra duoc hohoho.
             setTimeout(function(){
