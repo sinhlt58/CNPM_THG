@@ -2,8 +2,8 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 20, 2015 at 02:37 PM
+-- Host: localhost
+-- Generation Time: Mar 31, 2015 at 06:50 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -111,7 +111,7 @@ CREATE TABLE IF NOT EXISTS `navigation` (
   `target` varchar(30) NOT NULL,
   `position` int(3) NOT NULL,
   `status` int(2) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `navigation`
@@ -121,7 +121,8 @@ INSERT INTO `navigation` (`id`, `label`, `url`, `target`, `position`, `status`) 
 (1, 'Home', 'http://localhost/THG/home', 'not_sign_in', 0, 1),
 (2, 'Menu', 'http://localhost/THG/menu', 'sign_in', 1, 1),
 (3, 'Order', 'http://localhost/THG/order', 'sign_in', 2, 1),
-(4, 'About Us', 'http://localhost/THG/about-us', 'not_sign_in', 3, 1);
+(4, 'About Us', 'http://localhost/THG/about-us', 'not_sign_in', 3, 1),
+(5, 'Staff', 'http://localhost/THG/staff', 'sign_in', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -162,7 +163,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `title` varchar(200) NOT NULL,
   `header` varchar(300) NOT NULL,
   `body` mediumtext NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `posts`
@@ -177,7 +178,8 @@ INSERT INTO `posts` (`id`, `user_id`, `type`, `slug`, `label`, `title`, `header`
 (8, 9, 1, 'sign-up', 'Sign Up', 'Sign Up', '', ''),
 (9, 9, 3, 'new-order', 'New Order', 'New Order', '', ''),
 (10, 9, 2, 'restaurants', 'Restaurants', 'Restaurants', 'Choose one restaurant that you work for.', ''),
-(11, 9, 2, 'not-found', 'Not Found', 'Not Found', '404 we could not find this page.', '');
+(11, 9, 2, 'not-found', 'Not Found', 'Not Found', '404 we could not find this page.', ''),
+(12, 0, 3, 'staff', 'Staff', 'Staff', '', '');
 
 -- --------------------------------------------------------
 
@@ -380,7 +382,7 @@ MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=252;
 -- AUTO_INCREMENT for table `navigation`
 --
 ALTER TABLE `navigation`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `orders`
 --
@@ -390,7 +392,7 @@ MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=68;
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
+MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `post_types`
 --
