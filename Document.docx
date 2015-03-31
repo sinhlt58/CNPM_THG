@@ -1,0 +1,42 @@
+// THG project
+// Developed by: THG Team
+// This is the document which provides you important features, in order to use our software
+---------------------
+
+Link to our demo website: thg-uet.zz.vc
+
+---------------------
+// Version 1.0 released:
+// 
+
+1. Home page: http://thg-uet.zz.vc/home
+  - You can see the welcome message on the homepage
+  - Homepage contains: 
+    + Home: Link to our homepage
+    + About us: Some information about this project and our developers (of THG team).
+    + Sign in: Link to sign in site (login your own account)
+    + Sign up: Link to sign up site (creat new account if you haven't got any yet)
+2. Sign in site: http://thg-uet.zz.vc/sign-in
+  - Here is where you can login with your own account.
+  - How to login:
+    + Step 1: Fil your email address and your password in the login form
+    + Step 2: Click "Submit" button.
+  - If you use the wrong email address or wrong password, there will be some error message displayed, 
+    otherwise, you will login sucessfully.
+3. Sign up site: http://thg-uet.zz.vc/sign-up
+  - Here is where you can create your own new account.
+  - How to create a new account:
+    + Step 1: Type your email address in the "Email address" box.
+    + Step 2: Type your password in the "Password" box, and retype it exactly in the "Retype password" box.
+    + Step 3: Full fill your first name and your last name in next two boxes.
+    + Step 4: Click "Submit"
+  - There might be some error messages if you:
+    + Try to create some existed email address.
+    + Your retyped-password is not correct.
+    + If you do not type in "Password" box, then the "Retype password" box is unaccessable.
+    + You can not create an account if you do not provide enough infomation.
+  - So if you catch some of the errors above, please check it and try again.
+
+-----------------------
+// This document will be improved in the next release.
+// Thanks for supporting us.
