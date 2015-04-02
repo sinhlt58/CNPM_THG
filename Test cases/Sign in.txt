@@ -1,0 +1,6 @@
+ko nhap(ca 2, 1 trong 2)
+nhap du
+	sai email
+	dung email
+		sai pass
+		dung pass

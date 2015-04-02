@@ -1,0 +1,42 @@
+ko nhap(chac ko can viet het nhung neu can thi day la tat ca cac truong hop)
+		1 trong 5 o
+			ko email
+			ko pass
+			ko retype pass
+			ko first name
+			ko last name
+		2 trong 5 o:
+			ko email + pass
+			ko email + retype pass
+			ko email + first name
+			ko email + last name
+			ko pass + retype
+			ko pass + first name
+			ko pass + lastname
+			ko retype + first name
+			ko retype + last name
+			ko first name + last name
+		3 trong 5 o:
+			ko email + pass + retype pass
+			ko email + pass + first name
+			ko email + pass + last name
+			ko email + retype pass + first name
+			ko email + retype pass + last name
+			ko email + first name + last name
+			ko pass + retype + first
+			ko pass + retype + last
+			ko pass + retype + first
+			ko pass + first + last
+			ko retpye + first + pass
+		4 trong 5 o:
+			ko email + pass + retype + first
+			ko email + pass + retype + last
+			ko email + retpye + first + last
+			ko pass + retype + first + last
+		5 o
+nhap du
+	trung email
+	ko trung email
+		pass ko giong nhau
+			pass giong nhau
+
