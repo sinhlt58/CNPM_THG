@@ -1,0 +1,8 @@
+Add
+	ko nhap gi
+	co nhap
+		sai ten, email
+		dung ten, email
+			ktra chu hoa, thuong
+			da co trong danh sach
+			chua co trong danh sach

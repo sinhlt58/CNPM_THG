@@ -1,0 +1,21 @@
+Them category
+	ko nhap gi
+	co nhap
+		trung
+		ko trung
+
+Xoa category
+
+Sua category
+	sua ten
+		ko nhap gi
+		co nhap
+			trung ten
+			ko trung
+	them mon, sua mon
+		ko nhap gi
+		co nhap
+			trung ten
+			ko trung
+			gia ko phai la so
+	xoa mon
