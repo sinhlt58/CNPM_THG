@@ -2,12 +2,21 @@ $(document).ready(function(){
 
     var $addStaff = $("#add-staff");
     var $searchEmail = $("#search-email");
+    var $errors = $("#errors");
+
+    $errors.find("p").hide();
 
     searchEmail($searchEmail);
 
 
     $addStaff.on('click', function(){
-        
+        var keyWord = $searchEmail.val();
+
+        if (keyWord == ""){
+            $errors.children("p").eq(0).show();
+        }else{
+
+        }
     });
 
 
