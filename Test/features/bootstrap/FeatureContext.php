@@ -7,6 +7,8 @@ use Behat\Behat\Context\ClosuredContextInterface,
 use Behat\Gherkin\Node\PyStringNode,
     Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\MinkContext;
+use Behat\Behat\Event\ScenarioEvent,
+    Behat\Behat\Event\SuiteEvent;
 
 //
 // Require 3rd-party libraries here:
@@ -30,6 +32,8 @@ class FeatureContext extends MinkContext
     {
         // Initialize your context here
     }
+
+
 
 //
 // Place your definition and hook methods here:

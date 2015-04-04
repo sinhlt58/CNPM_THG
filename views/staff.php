@@ -15,8 +15,9 @@
           </span>
             <input id="search-email" name="search_email" type="email" class="form-control" placeholder="Search for email...">
         </div><!-- /input-group -->
-
-        <div id="list-staff">
+        <br>
+        <br>
+        <div id="list-staff" class="list-group">
 
             <?php
 
@@ -32,21 +33,26 @@
 
                         $data_user = mysqli_fetch_assoc($result2);
 
-                        if (!$result12){
-
-                        }
-
-                        echo $data_user['first_name'].' '.$data_user['last_name'].'<br>';
-                        echo $data_user['email'].'<br>';
-
-
                     ?>
+
+                    <li class="list-group-item">
+                        <p><?php echo $data_user['first_name'].' '.$data_user['last_name']; ?></p>
+                        <p class="email-item"><?php echo $data_user['email'].'<br>'; ?></p>
+                    </li>
 
             <?php  } ?>
 
         </div>
 
+        <template id="staff-item">
+            <li class="list-group-item">
+                <p>{{fullName}}</p>
+                <p class="email-item">{{email}}</p>
+            </li>
+        </template>
+
     </div>
+
 
 </div>
 

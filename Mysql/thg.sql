@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 31, 2015 at 06:50 PM
+-- Generation Time: Apr 04, 2015 at 04:44 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -213,7 +213,7 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
 `id` int(40) NOT NULL,
   `name` varchar(45) NOT NULL,
   `number_of_table` int(40) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `restaurants`
@@ -221,7 +221,9 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
 
 INSERT INTO `restaurants` (`id`, `name`, `number_of_table`) VALUES
 (1, 'RESTAURANT THG', 100),
-(2, 'I am the waiter', 200);
+(2, 'I am the waiter', 200),
+(3, 'My restaurant', 100),
+(4, 'My restaurant', 100);
 
 -- --------------------------------------------------------
 
@@ -257,7 +259,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(200) NOT NULL,
   `status` int(1) NOT NULL DEFAULT '1',
   `avatar` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -265,7 +267,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `status`, `avatar`) VALUES
 (9, 'admin', 'admin', 'thg@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, ''),
-(10, 'Waiter', 'Waiter', 'waiter@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 0, '');
+(10, 'Waiter', 'Waiter', 'waiter@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 0, ''),
+(11, 'waiter', '1', 'waiter1@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, ''),
+(12, 'waiter', '2', 'waiter2@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, '');
 
 -- --------------------------------------------------------
 
@@ -278,7 +282,7 @@ CREATE TABLE IF NOT EXISTS `users_restaurants` (
   `user_id` int(40) NOT NULL,
   `restaurant_id` int(40) NOT NULL,
   `role` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users_restaurants`
@@ -287,7 +291,9 @@ CREATE TABLE IF NOT EXISTS `users_restaurants` (
 INSERT INTO `users_restaurants` (`id`, `user_id`, `restaurant_id`, `role`) VALUES
 (1, 9, 1, 0),
 (2, 10, 2, 0),
-(3, 10, 1, 1);
+(3, 10, 1, 1),
+(4, 11, 3, 0),
+(5, 12, 4, 0);
 
 --
 -- Indexes for dumped tables
@@ -402,17 +408,17 @@ MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `restaurants`
 --
 ALTER TABLE `restaurants`
-MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `users_restaurants`
 --
 ALTER TABLE `users_restaurants`
-MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
