@@ -9,15 +9,29 @@ if (isset($_POST['keyword'])){
     $result1 = mysqli_query($dbc, $query1);
 
     if (mysqli_num_rows($result1) == 0){
+
         echo "does not exit";
+
     }else{
-        $data = mysqli_fetch_assoc($result1);
 
-        $user_id = $data['id'];
+        if (isset($_POST['restaurantId'])){
 
-        $full_name = $data['first_name'].' '.$data['last_name'];
+            $data = mysqli_fetch_assoc($result1);
 
-        echo $full_name;
+            $restaurant_id = $_POST['restaurantId'];
+            $user_id = $data['id'];
+            $full_name = $data['first_name'].' '.$data['last_name'];
+
+            $query2 = "INSERT INTO users_restaurants (user_id, restaurant_id, role) VALUES ($user_id, $restaurant_id, 1)";
+            $result2 = mysqli_query($dbc, $query2);
+
+            if (!$result2){
+                echo mysqli_error($dbc, $result2);
+            }
+
+            echo $full_name;
+        }
+
     }
 }
 

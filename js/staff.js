@@ -6,10 +6,11 @@ $(document).ready(function(){
     var $errors = $("#errors");
     var $templateStaffItem = $("#staff-item").html();
 
+    var restaurantId = $addStaff.attr('restaurant-id');
+
     $errors.find("p").hide();
 
     searchEmail($searchEmail);
-
 
     $addStaff.on('click', function(){
 
@@ -28,7 +29,7 @@ $(document).ready(function(){
                 $.ajax({
                     url: 'ajax/check_search_email.php',
                     type: 'POST',
-                    data: {keyword: keyWord},
+                    data: {keyword: keyWord, restaurantId: restaurantId},
                     success: function(response){
 
                         if (response == 'does not exit'){

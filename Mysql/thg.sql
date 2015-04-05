@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Apr 04, 2015 at 04:44 AM
+-- Generation Time: Apr 05, 2015 at 08:50 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -282,7 +282,7 @@ CREATE TABLE IF NOT EXISTS `users_restaurants` (
   `user_id` int(40) NOT NULL,
   `restaurant_id` int(40) NOT NULL,
   `role` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users_restaurants`
@@ -293,7 +293,8 @@ INSERT INTO `users_restaurants` (`id`, `user_id`, `restaurant_id`, `role`) VALUE
 (2, 10, 2, 0),
 (3, 10, 1, 1),
 (4, 11, 3, 0),
-(5, 12, 4, 0);
+(5, 12, 4, 0),
+(6, 11, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -418,7 +419,7 @@ MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
 -- AUTO_INCREMENT for table `users_restaurants`
 --
 ALTER TABLE `users_restaurants`
-MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
