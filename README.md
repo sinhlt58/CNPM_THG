@@ -20,5 +20,5 @@ Technology used in this project:
 Sprint 2 review:
 https://www.youtube.com/watch?v=G0WVqSxnY90&feature=youtu.be
 
-Sprint3 review:
+Sprint 3 review:
 https://www.youtube.com/watch?v=RbNBQJmr8es&feature=youtu.be
