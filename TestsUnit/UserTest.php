@@ -72,22 +72,22 @@ class User_Test extends PHPUnit_Framework_TestCase{
         $this->assertFalse(check_user($dbc));
     }
 
-    public function test_signup_notFullFilled_1()
+    public function test_signup_no_firstname()
     {
         $dbc = Database::getDatabase();
 
-        $_POST = array('signup_email' => 'thg@gmail.com',
+        $_POST = array('signup_email' => 'thg1@gmail.com',
             'signup_password' => '123',
             'signup_retype_password' => '123',
             'first_name' => '',
-            'last_name' => '');
+            'last_name' => 'abc');
         $this->assertEquals('notFullFilled', validSignUp($dbc));
     }
 
-    public function test_signup_notFullFilled_2()
+    public function test_signup_no_lastname()
     {
         $dbc = Database::getDatabase();
-        $_POST = array('signup_email' => 'thg@gmail.com',
+        $_POST = array('signup_email' => 'thg1@gmail.com',
             'signup_password' => '123',
             'signup_retype_password' => '123',
             'first_name' => 'abc',
@@ -95,14 +95,44 @@ class User_Test extends PHPUnit_Framework_TestCase{
         $this->assertEquals('notFullFilled', validSignUp($dbc));
     }
 
-    public function test_signup_notFullFilled_3(){
+   public function test_signup_no_firstname_and_lastname(){
+        $dbc = Database::getDatabase();
+        $_POST = array('signup_email' => 'thg1@gmail.com',
+            'signup_password' => '123',
+            'signup_retype_password' => '123',
+            'first_name' => '',
+            'last_name' => '');
+        $this->assertEquals('notFullFilled', validSignUp($dbc));
+    }
+
+    public function test_signup_existing_email(){
         $dbc = Database::getDatabase();
         $_POST = array('signup_email' => 'thg@gmail.com',
             'signup_password' => '123',
             'signup_retype_password' => '123',
-            'first_name' => '',
+            'first_name' => 'abc',
             'last_name' => 'abc');
-        $this->assertEquals('notFullFilled', validSignUp($dbc));
+        $this->assertEquals('invalidEmail', validSignUp($dbc));
     }
+
+    public function test_signup_existing_email_case_insensitive(){
+        $dbc = Database::getDatabase();
+        $_POST = array('signup_email' => 'THG@GMAIL.com',
+            'signup_password' => '123',
+            'signup_retype_password' => '123',
+            'first_name' => 'abc',
+            'last_name' => 'abc');
+        $this->assertEquals('invalidEmail', validSignUp($dbc));
+    }
+//
+//    public function test_signup_different_password(){
+//        $dbc = Database::getDatabase();
+//        $_POST = array('signup_email' => 'thg1@gmail.com',
+//            'signup_password' => '123',
+//            'signup_retype_password' => '1234',
+//            'first_name' => 'abc',
+//            'last_name' => 'abc');
+//        $this->assertEquals('invalidEmail', validSignUp($dbc));
+//    }
 }
 ?>
