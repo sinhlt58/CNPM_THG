@@ -16,3 +16,9 @@ Feature: As a waiter/waitress (already had an account in database)
     Then I should be on "restaurants"
       And I should see "Choose one restaurant that you work for."
       And I should see "RESTAURANT THG"
+      
+  Scenario: Login unsuccessfully (wrong email address)
+    When I fill in "email" with "thg_wrong@gmail.com"
+      And I fill in "password" with "123"
+      And I press "Submit"
+    Then I should see "something wrong"
