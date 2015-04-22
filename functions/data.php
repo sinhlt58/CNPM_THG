@@ -18,7 +18,7 @@ function data_user($dbc, $id) {
 	
 	if (is_numeric($id)){
 		
-		$cond = "WHERE id = '$id'";
+		$cond = "WHERE id = $id";
 		
 	} else {
 		

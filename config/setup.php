@@ -34,7 +34,7 @@ $checkSignUp = validSignUp($dbc);
 
 
 # User Setup:
-check_user($dbc, $slug);
+check_user($dbc);
 $user = data_user($dbc, $_SESSION['username']);//bien toan cuc.
 
 # Restaurant Setup:
