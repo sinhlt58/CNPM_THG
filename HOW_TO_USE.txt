@@ -1,0 +1,30 @@
+--------------------------- Welcome to THG --------------------------------
+
+I. Introduce:
+- THG is a web-based software written to help restaurants to save time while serving their customers.
+- Use: 
+	+ This software allows waiter/waitress and chiefs to communicate with each other almost instantly by posting customers' orders
+to an online dashboard - where others (chiefs) can take those oders immediately.
+	+ This software allows restaurant's bosses/leaders manage their staff and have more infomation about all these order.
+
+----
+II. How to use?
+
+1. HOW TO REGISTER A NEW ACCOUNT?
+	- Step 1: Go to the home page, then click "Sign up"
+	- Step 2: Fill the required infomation into the blank boxes (email, password, password retype, first name, lastname)
+	- Step 3: Click "Submit"
+	- Step 4: Check the result (It's sucessfully to register a new account when you're in the restaurant-selection page after Step 3.
+		  If not, check the "PROBLEMS AND ERRORS" categories in this document)
+2. HOW TO LOGIN (WHEN ALREADY HAD AN ACCOUNT)?
+	- Step 1: Go to the home page, then click "Sign in"
+	- Step 2: Fill your email in "Email address" box and fill your password in "Password" box
+	- Step 3: Click "Submit"
+	- Step 4: Check the result (It's sucessfully login when you're in the restaurant-selection page after Step 3.
+		  If not, check the "PROBLEMS AND ERRORS" categories in this document)
+3. HOW TO CHOOSE YOUR RESTAURANT?
+	- Case 1: You can see a list of restaurants after signing. Then, choose your restaurant that you work for or manage in the list.
+	- Case 2: If your account is brand new, you will only see a restaurant named "RESTAURANT THG" - the default restaurant.
+		  Please contact your restaurant's manager to be added into the restaurant staff list. 
+		  After that, you will see your restaurant name in the list.
+	
