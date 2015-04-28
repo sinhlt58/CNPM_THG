@@ -44,8 +44,27 @@ class DataUserTest extends PHPUnit_Framework_TestCase{
 
     }
 
-    public function testGetSlugOfPage(){
+    public function testGetTypeOfPage(){
+        $this->assertEquals(1, data_post($this->dbc, 'home')['type']);
+        $this->assertEquals(2, data_post($this->dbc, 'restaurants')['type']);
+        $this->assertEquals(3, data_post($this->dbc, 'staff')['type']);
+    }
 
+    public function testGetTypeOfPageWithId(){
+        $this->assertEquals(1, data_post($this->dbc, 1)['type']);
+        $this->assertEquals(2, data_post($this->dbc, 10)['type']);
+        $this->assertEquals(3, data_post($this->dbc, 12)['type']);
+    }
+
+    public function testGetDataOfRestaurant(){
+        $_SESSION['restaurantId'] = 1;
+        $compare = array('id' => 1, 'name' => 'RESTAURANT THG', 'number_of_table' => 100);
+        $this->assertEquals($compare, restaurant_data($this->dbc));
+    }
+
+    public function testSettingsForPage(){
+
+        $this->assertEquals('Thg11.0', data_setting_value($this->dbc, 'site-title'));
     }
 
 }
