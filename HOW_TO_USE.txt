@@ -9,22 +9,69 @@ to an online dashboard - where others (chiefs) can take those oders immediately.
 
 ----
 II. How to use?
+/* LOGIN, LOG OUT AND CREATE NEW ACCOUNT */
 
 1. HOW TO REGISTER A NEW ACCOUNT?
 	- Step 1: Go to the home page, then click "Sign up"
 	- Step 2: Fill the required infomation into the blank boxes (email, password, password retype, first name, lastname)
 	- Step 3: Click "Submit"
-	- Step 4: Check the result (It's sucessfully to register a new account when you're in the restaurant-selection page after Step 3.
-		  If not, check the "PROBLEMS AND ERRORS" categories in this document)
+	- Step 4: Check the result
 2. HOW TO LOGIN (WHEN ALREADY HAD AN ACCOUNT)?
 	- Step 1: Go to the home page, then click "Sign in"
 	- Step 2: Fill your email in "Email address" box and fill your password in "Password" box
 	- Step 3: Click "Submit"
 	- Step 4: Check the result (It's sucessfully login when you're in the restaurant-selection page after Step 3.
 		  If not, check the "PROBLEMS AND ERRORS" categories in this document)
+3. HOW TO LOG OUT?
+	- Step 1: Click on your name on the rigt of navigation bar.
+	- Step 2: A submenu will be displayed, click on "Logout".
+
+/* CHOOSE YOUR RESTAURANTS */
+
 3. HOW TO CHOOSE YOUR RESTAURANT?
 	- Case 1: You can see a list of restaurants after signing. Then, choose your restaurant that you work for or manage in the list.
 	- Case 2: If your account is brand new, you will only see a restaurant named "RESTAURANT THG" - the default restaurant.
 		  Please contact your restaurant's manager to be added into the restaurant staff list. 
 		  After that, you will see your restaurant name in the list.
-	
+
+/* MENU */
+
+4. HOW TO ADD A CATEGORY IN MENU?
+	- Step 1: Click "+" button in the "Menu" bar
+	- Step 2: Type in "Name Category:"
+	- Step 3: Click "Save changes" to create new category, or click "Close" to cancel.
+5. HOW TO RENAME A CATEGORY?
+	- Step 1: Click "-" button at the end of the category you want to change name.
+	- Step 2: Type in new name
+	- Step 3: Click "s" button
+6. HOW TO REMOVE A CATEGORY?
+	- Step 1: Click on "x" button at the end of the category you want to remove.
+7. HOW TO ADD FOOD INTO A FOOD CATEGORY?
+	- Step 1: Click on "+" button at the end of the category you want to add dishes.
+	- Step 2: In "New Food Item" dialoge, type food name in "Name", and food price in "Price" box.
+	- Step 3: Click "Save changes" to add new food, or click "Close" to cancel.
+8. HOW TO CHANGE A FOOD ITEM'S ATTRIBUTE (NAME/PRICE)?
+	- Step 1: Click on "-" button.
+	- Step 2: Type in name or price if you want to change
+	- Step 3: Click "s" button.
+9. HOW TO REMOVE A FOOD ITEM?
+	- Step 1: Click on "x" button at the end of the food item bar that you want to remove.
+
+/* ORDER */
+
+10. HOW TO CREATE A NEW ORDER?
+	- Step 1: Click on "New order" button.
+	- Step 2: Click on "TABLE" and fill in table number.
+	- Step 3: Add food item into order by clicking into food name on the right table. 
+		  If you want to increase numbers of dishes, just clicking into that food item's name in the right table.
+		  If you want to decrease numbers of dishes, just clicking into that food item's name in the order in the left side.
+		  The total price of the order displays at the bottom of the order, too.
+	- Step 4: Click "Save" to submit the order. All orders will be displayed in the "ORDER" page.
+
+/* STAFF */
+
+11. HOW TO ADD NEW STAFF INTO YOUR RESTAURANT?
+	- Step 1: Type in "Search for email..." box the email of the staff you want to add to your restaurant.
+	- Step 2: Some suggestions will be displayed. If not, the email you have just typed in is not exist.
+	- Step 3: Choose from suggestions the right email for you, and click "Add".
+	- Step 4: Check the result in the notice message.
