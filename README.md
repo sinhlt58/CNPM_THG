@@ -16,7 +16,7 @@ Technology used in this project:
       - PHPStorm
       - XAMPP
       - Browser: Firefox
-  
+      - Use case creator (for documentations): http://casecomplete.com/
 Sprint 2 review:
 https://www.youtube.com/watch?v=G0WVqSxnY90&feature=youtu.be
 
