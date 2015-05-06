@@ -12,16 +12,16 @@
 <script src="lib/bootstrap-3.3.2-dist/js/bootstrap.min.js"></script>
 
 <!-- Mustache -->
-<script src="js/mustache.min.js"></script>
+<script src="lib/mustache.min.js"></script>
 
 <!-- Menu -->
-<script src="config/menu.js"></script>
+<script src="js/menu.js"></script>
 
 <!-- New Order -->
-<script src="config/new-order.js"></script>
+<script src="js/new-order.js"></script>
 
 <!-- Order -->
-<script src="config/order.js"></script>
+<script src="js/order.js"></script>
 
 <script>
 	

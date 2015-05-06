@@ -7,7 +7,7 @@
  */
 ob_start();
 
-require_once ('D:/Dropbox/XAMPP/THG/functions/user.php');
+require_once ('../functions/user.php');
 
 class Database{
     private $dbc;
