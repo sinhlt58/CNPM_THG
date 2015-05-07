@@ -1,6 +1,5 @@
 <?php
 require_once('../functions/data.php');
-require_once('../functions/sandbox.php');
 require_once('ConnectionClass.php');
 
 class DataUserTest extends PHPUnit_Framework_TestCase{

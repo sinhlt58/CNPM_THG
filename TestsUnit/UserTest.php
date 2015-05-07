@@ -7,7 +7,7 @@
  */
 ob_start();
 
-require_once ('../functions/user.php');
+include_once ('../functions/user.php');
 
 class Database{
     private $dbc;
