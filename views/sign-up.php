@@ -37,7 +37,7 @@
                     </div>
                     <?php
                     if ($checkSignUp == 'wrongPassword') {
-                        echo '<strong><font color = "red">Incorrect retyped password!</font></strong></br>';
+                        echo '<strong><font color = "red">Incorrect retyped password. Leading or trailing spaces will be ignored.</font></strong></br>';
                     }
                     if (($checkSignUp == 'notFullFilled') && ($_POST['signup_email'] != '')) {
                         echo '<strong><font color = "red">You must complete your sign-up form!</font></strong></br>';

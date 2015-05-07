@@ -25,19 +25,21 @@ return $path;
 }
 
 function get_slug($dbc, $url) {
-	
+
 	$pos = strrpos($url, '/');
 	$slug = substr($url, $pos + 1);
-	
+
 	return $slug;
-	
+
 }
 
 
 function selected($value1, $value2, $return) {
 	if ($value1 == $value2){
 		echo $return;
+        return true;
 	}
+    else return false;
 }
 
 function is_sign_in(){
@@ -77,7 +79,7 @@ function check_slug(&$slug, $dbc){
 
     if(mysqli_num_rows($result) === 0){
       header('Location: not-found');
-
+      return 0;
     }else{
 
       $page_type_data = mysqli_fetch_assoc($result);
@@ -109,7 +111,7 @@ function check_slug(&$slug, $dbc){
       }
 
     }
-  }else header('Location: home');
+  }else {header('Location: home');}
 }
 
 ?>
