@@ -6,6 +6,8 @@ function check_user($dbc){
         $query = "SELECT * FROM users WHERE email = '$_POST[email]' AND password = SHA1($_POST[password])";
         $run = mysqli_query($dbc, $query);
 
+        if($run == false)
+            return false;
         if(mysqli_num_rows($run) == 1){
 
             $_SESSION['username'] = $_POST['email'];
@@ -15,7 +17,7 @@ function check_user($dbc){
 
         }else {
             echo "something wrong";
-            return flase;
+            return false;
         }
     }
 
@@ -27,7 +29,7 @@ function check_user($dbc){
  * Still has some errors
  * */
 function validSignUp($dbc) {
-    if (empty($_POST['first_name']) && empty($_POST['last_name'])) {
+    if (empty($_POST['signup_email']) || empty($_POST['first_name']) || empty($_POST['last_name'])) {
         return 'notFullFilled';
     }
 

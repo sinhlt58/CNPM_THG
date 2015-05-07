@@ -43,14 +43,14 @@ class User_Test extends PHPUnit_Framework_TestCase{
     {
         $dbc = Database::getDatabase();
         $_POST = array('email' => 'THG@GMAIL.COM', 'password' => '123 ');
-        $this->assertFalse(check_user($dbc));
+        $this->assertTrue(check_user($dbc));
     }
 
     public function test_case_password_with_pre_space()
     {
         $dbc = Database::getDatabase();
         $_POST = array('email' => 'THG@GMAIL.COM', 'password' => ' 123');
-        $this->assertFalse(check_user($dbc));
+        $this->assertTrue(check_user($dbc));
     }
 
     public function test_case_password_with_random_space()
@@ -124,15 +124,25 @@ class User_Test extends PHPUnit_Framework_TestCase{
             'last_name' => 'abc');
         $this->assertEquals('invalidEmail', validSignUp($dbc));
     }
-//
-//    public function test_signup_different_password(){
-//        $dbc = Database::getDatabase();
-//        $_POST = array('signup_email' => 'thg1@gmail.com',
-//            'signup_password' => '123',
-//            'signup_retype_password' => '1234',
-//            'first_name' => 'abc',
-//            'last_name' => 'abc');
-//        $this->assertEquals('invalidEmail', validSignUp($dbc));
-//    }
+
+    public function test_signup_no_password(){
+        $dbc = Database::getDatabase();
+        $_POST = array('signup_email' => 'THG@GMAIL.com',
+            'first_name' => 'abc',
+            'last_name' => 'abc');
+        $this->assertEquals('notFullFilled', validSignUp($dbc));
+    }
+
+    public function test_signup_valid_account(){
+        $dbc = Database::getDatabase();
+        $_POST = array('signup_email' => 'abc@gmail.com',
+            'signup_password' => '123',
+            'signup_retype_password' => '123',
+            'first_name' => 'abc',
+            'last_name' => 'abc');
+        $this->assertEquals('true', validSignUp($dbc));
+        $query = "DELETE FROM users WHERE email = 'abc@gmail.com'";
+        $result = mysqli_query($dbc, $query);
+    }
 }
 ?>
