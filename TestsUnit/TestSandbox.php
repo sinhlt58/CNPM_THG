@@ -38,6 +38,14 @@ class TestSandBox extends PHPUnit_Framework_TestCase{
         setData::setIdUserAndRestaurant(null, null);
         $this->assertEquals($not_sign_in, status_user_page());
 
+        setData::setIdUserAndRestaurant(1, null);
+        $this->assertEquals($signed_in, status_user_page());
+
+        setData::setIdUserAndRestaurant(1, 1);
+        $this->assertEquals($choose_restaurant, status_user_page());
+
+        setData::setIdUserAndRestaurant(null, 1);
+        $this->assertEquals($not_sign_in, status_user_page());
 
     }
 

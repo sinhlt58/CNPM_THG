@@ -2,8 +2,8 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: May 07, 2015 at 07:32 AM
+-- Host: 127.0.0.1
+-- Generation Time: May 07, 2015 at 11:40 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -219,7 +219,7 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
   `name` varchar(45) NOT NULL,
   `number_of_table` int(40) NOT NULL,
   `name_boss` varchar(40) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `restaurants`
@@ -228,7 +228,8 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
 INSERT INTO `restaurants` (`id`, `name`, `number_of_table`, `name_boss`) VALUES
 (1, 'RESTAURANT THG', 100, 'thg@gmail.com'),
 (8, 'My restaurant', 100, 'water1@gmail.com'),
-(9, 'My restaurant', 100, 'waiter2@gmail.com');
+(9, 'My restaurant', 100, 'waiter2@gmail.com'),
+(10, 'My restaurant', 100, '');
 
 -- --------------------------------------------------------
 
@@ -264,7 +265,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(200) NOT NULL,
   `status` int(1) NOT NULL DEFAULT '1',
   `avatar` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -273,7 +274,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `status`, `avatar`) VALUES
 (9, 'admin', 'admin', 'thg@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, ''),
 (17, 'waiter', '1', 'water1@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, ''),
-(18, 'waiter', '2', 'waiter2@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, '');
+(18, 'waiter', '2', 'waiter2@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, ''),
+(19, 'waiter', 'waiter', 'waiter@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, '');
 
 -- --------------------------------------------------------
 
@@ -286,7 +288,7 @@ CREATE TABLE IF NOT EXISTS `users_restaurants` (
   `user_id` int(40) NOT NULL,
   `restaurant_id` int(40) NOT NULL,
   `role` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users_restaurants`
@@ -298,7 +300,9 @@ INSERT INTO `users_restaurants` (`id`, `user_id`, `restaurant_id`, `role`) VALUE
 (14, 17, 1, 1),
 (15, 18, 9, 0),
 (16, 18, 1, 1),
-(17, 18, 8, 1);
+(17, 18, 8, 1),
+(18, 19, 10, 0),
+(19, 19, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -413,17 +417,17 @@ MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `restaurants`
 --
 ALTER TABLE `restaurants`
-MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
+MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `users_restaurants`
 --
 ALTER TABLE `users_restaurants`
-MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=18;
+MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

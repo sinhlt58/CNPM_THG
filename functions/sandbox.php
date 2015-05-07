@@ -79,7 +79,7 @@ function check_slug(&$slug, $dbc){
 
     if(mysqli_num_rows($result) === 0){
       header('Location: not-found');
-
+      return 0;
     }else{
 
       $page_type_data = mysqli_fetch_assoc($result);
@@ -111,7 +111,7 @@ function check_slug(&$slug, $dbc){
       }
 
     }
-  }else header('Location: home');
+  }else {header('Location: home');}
 }
 
 ?>
