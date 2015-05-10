@@ -47,7 +47,7 @@
         <div class="w-col w-col-6">
           <div class="main-feature-group"><img class="feature-icon" src="images/iconmonstr-laptop-2-icon.svg" height="30">
             <h3>Web Application</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.&nbsp;Consectetur adipiscing elit.</p>
+            <p>THG is a time-saving way to send customers' orders directly to the kictchen via waiters without using pens or papers.</p>
           </div>
         </div>
       </div>
@@ -55,37 +55,13 @@
         <div class="w-col w-col-6">
           <div class="main-feature-group"><img class="feature-icon" src="images/iconmonstr-download-13-icon.svg" height="30">
             <h3>Mobile App</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.&nbsp;Consectetur adipiscing elit.</p>
+            <p>Coming Soon</p>
           </div>
         </div>
         <div class="w-col w-col-6"><img src="images/Metric-screenshot-phone.png" data-ix="fade-in-on-scroll">
         </div>
       </div>
       <div class="w-row small-features-row">
-        <div class="w-col w-col-3">
-          <div class="feature"><img class="feature-icon" src="images/iconmonstr-control-panel-icon.svg" height="30">
-            <h3>Dashboard</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.&nbsp;</p>
-          </div>
-        </div>
-        <div class="w-col w-col-3">
-          <div class="feature"><img class="feature-icon" src="images/iconmonstr-sitemap-7-icon.svg" height="30">
-            <h3>Custom Rules</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.&nbsp;</p>
-          </div>
-        </div>
-        <div class="w-col w-col-3">
-          <div class="feature"><img class="feature-icon" src="images/iconmonstr-save-9-icon.svg" height="30">
-            <h3>Presets</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.&nbsp;</p>
-          </div>
-        </div>
-        <div class="w-col w-col-3">
-          <div class="feature"><img class="feature-icon" src="images/iconmonstr-bar-chart-4-icon.svg" height="30">
-            <h3>Metrics</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.&nbsp;</p>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -120,41 +96,6 @@
         </div>
       </div>
       <div class="additional-contact">Want to work with our Team Members? Please <a class="page-link" href="#">contact us</a>.</div>
-    </div>
-  </div>
-  <div class="w-section section" id="customers">
-    <div class="w-container">
-      <h2>What People Say About Us</h2>
-      <div class="w-slider testimonial-slider" data-animation="slide" data-duration="500" data-infinite="1">
-        <div class="w-slider-mask">
-          <div class="w-slide testimony-slide">
-            <p class="testimony-text">“Donec ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum.”</p><img class="person" src="images/04f14af5199093cdd29a89eb295febf5.jpeg" width="64">
-            <div class="name">Kyle Killit</div>
-            <div class="title">Designer at Tiempo Labs</div>
-          </div>
-          <div class="w-slide testimony-slide">
-            <p class="testimony-text">“Ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius blandit sit amet non magna”</p><img class="person" src="images/sergie-square.jpg" width="100">
-            <div class="name">Sergie Kalashnikov</div>
-            <div class="title">CEO at BentoBox</div>
-          </div>
-          <div class="w-slide testimony-slide">
-            <p class="testimony-text">“Nulla non metus auctor fringilla. Maecenas sed diam eget risus varius blandit sit amet non magna. Maecenas faucibus mollis interdum.”</p><img class="person" src="images/bryant-square.jpg" width="100">
-            <div class="name">Bryant Chou</div>
-            <div class="title">CTO at Slapper Labs</div>
-          </div>
-        </div>
-        <div class="w-slider-arrow-left slider-arrow">
-          <div class="w-icon-slider-left"></div>
-        </div>
-        <div class="w-slider-arrow-right slider-arrow">
-          <div class="w-icon-slider-right"></div>
-        </div>
-        <div class="w-slider-nav w-round slide-nav"></div>
-      </div>
-    </div>
-  </div>
-  <div class="w-section section clients">
-    <div class="w-container"><img class="client-logo" src="images/client_logo_johnson_and_johnson.png" width="162"><img class="client-logo" src="images/client_logo_tesla.png" width="160"><img class="client-logo" src="images/client_logo_ouya.png" width="162"><img class="client-logo" src="images/client_logo_chartboost.png" width="162"><img class="client-logo" src="images/client_logo_mammoth.png" width="162"><img class="client-logo" src="images/client_logo_neutrogena.png" width="162">
     </div>
   </div>
   <div class="w-section section footer">
