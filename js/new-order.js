@@ -170,21 +170,13 @@ $(document).ready(function () {
     }
 
     function chooseTable($inputTableNumber, $tableNumber) {
-        //an input.
-        $inputTableNumber.hide();
+
+        
 
         $tableNumber.on('click', function () {
-            $(this).hide();//an so ban.
             $inputTableNumber.show().focus();//hien input.
         });
 
-        $inputTableNumber.blur(function () {
-            var valueTable = $(this).val();//lay so ban vua nhap vao.
-            $tableNumber.html('TABLE: ' + valueTable);//sua lai so ban.
-
-            $(this).hide();//an input.
-            $tableNumber.show();//hien so ban.
-        });
     }
 
     //=============================*END NEW ORDERS*===============================

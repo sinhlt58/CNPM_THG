@@ -28,8 +28,8 @@
 	#wrap {
 		min-heigt: 100%;
 		height: auto;	
-		margin: 0 auto -60px;
-		padding: 0 0 60px;
+		margin: 0 auto 0px;
+		padding: 0 0 0px;
 	}
 	
 	#footer {
@@ -95,6 +95,7 @@
 	
 	#edit-fi.edit-fi .edit-fi{
 		display: initial;
+		display: block;
 	}
 	
 	#edit-fi.edit-fi .no-edit-fi{

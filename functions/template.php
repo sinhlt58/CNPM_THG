@@ -17,7 +17,7 @@ function nav_main($dbc, $path){
 		$nav['slug'] = get_slug($dbc, $nav['url']);	
 	?>
 		
-		<li <?php selected($path['call_parts'][0], $nav['slug'], 'class="active"'); ?> ><a href="<?php echo $nav['url']; ?>"><?php echo $nav['label']; ?></a></li>
+		<a class="w-nav-link nav-link <?php selected($path['call_parts'][0], $nav['slug'], 'nav-current'); ?>"  href="<?php echo $nav['url']; ?>"><?php echo $nav['label']; ?></a>
 	
 	<?php }
 

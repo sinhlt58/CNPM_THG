@@ -12,29 +12,30 @@ $query = "SELECT * FROM orders WHERE restaurant_id = $restaurant_id ORDER BY id 
 $result = mysqli_query($dbc, $query);
 
 while ($list_orders = mysqli_fetch_assoc($result)){ ?>
-    <?php
+<?php
 
-    $table_order = $list_orders['table_order'];
-    $total_price = $list_orders['total_price'];
-    $order_id = $list_orders['id'];
-    $time_created = $list_orders['created'];
-    $creator = $list_orders['creator'];
+$table_order = $list_orders['table_order'];
+$total_price = $list_orders['total_price'];
+$order_id = $list_orders['id'];
+$time_created = $list_orders['created'];
+$creator = $list_orders['creator'];
 
-    $timeAgoObject = new convertToAgo();
-    $ts = date('y-m-d G:i:s', $time_created);
-    $convertedTime = ($timeAgoObject->convert_datetime($ts));
-    $when = ($timeAgoObject->makeAgo($convertedTime));
+$timeAgoObject = new convertToAgo();
+$ts = date('y-m-d G:i:s', $time_created);
+$convertedTime = ($timeAgoObject->convert_datetime($ts));
+$when = ($timeAgoObject->makeAgo($convertedTime));
 
-    ?>
-    <div class="pin col-md-3" style="margin: 15px 15px; padding: 10px;">
-        <h4 align="center" style="font-weight: bold">TABLE: <?php echo $table_order;?></h4>
-        <table class="table" style="font-size: 14px;color:#ababab;">
-            <tbody id="hey">
-            <?php
-            $query2 = "SELECT * FROM food_orders WHERE order_id = $order_id";
-            $result2 = mysqli_query($dbc, $query2);
+?>
+<div class="w-col w-col-4">
+    <div class="w-order plan-wrapper">
+        <h4>Table <?php echo $table_order;?></h4>
+        <div>
+            <div class="w-order-deatail">
+                <?php
+                $query2 = "SELECT * FROM food_orders WHERE order_id = $order_id";
+                $result2 = mysqli_query($dbc, $query2);
 
-            while ($list_items = mysqli_fetch_assoc($result2)){ ?>
+                while ($list_items = mysqli_fetch_assoc($result2)){ ?>
                 <?php
 
                 $amount = $list_items['amount'];
@@ -47,28 +48,37 @@ while ($list_orders = mysqli_fetch_assoc($result)){ ?>
                 $food_price = $food_data['food_price'];
 
                 ?>
-                <tr>
-                    <td><?php echo $amount; ?></td>
-                    <td><?php echo $food_name; ?></td>
-                    <td align="right"><?php echo $amount*$food_price; ?>$</td>
-                </tr>
-            <?php  }  ?>
-            </tbody>
-        </table>
-        <hr style="margin-top: -10px;margin-bottom: 10px;">
-        <table style="font-size: 14px;color:#ababab;width: 100%;">
-            <tbody>
-            <tr>
-                <td><p style="text-align: left;  padding: 10px;">Total</p></td>
-                <td></td>
-                <td><p style="text-align: right;  padding: 12px;" class="ng-binding" ><?php echo $total_price;?>$</p></td>
-            </tr>
+                <div class="w-row">
+                    <div class="w-col w-col-2">
+                      <div><?php echo $amount; ?></div>
+                  </div>
+                  <div class="w-col w-col-6">
+                      <div><?php echo $food_name; ?></div>
+                  </div>
+                  <div class="w-col w-col-4">
+                      <div>$<?php echo $amount*$food_price; ?></div>
+                  </div>
+              </div>
 
-            <tr>
-                <td><p style="text-align: left;  padding: 10px;"><?php echo $creator;?></p></td>
-                <td></td>
-                <td><p style="text-align: right;  padding: 12px;" class="ng-binding" ><?php echo $when;?></p></td>
-            </tr>
-            </tbody></table>
-    </div>
+              <?php  }  ?>
+          </div>
+      </div>
+      <div class="w-order-total">
+          <div class="w-row">
+            <div class="w-col w-col-8">
+              <div>Total</div>
+          </div>
+          <div class="w-col w-col-4">
+              <div class="price-accent">$<?php echo $total_price;?></div>
+          </div>
+      </div>
+  </div>
+  <div class="w-order-info">
+  <div class="italic-right">Created by <?php echo $creator;?></div>
+  <div class="italic-right"><?php echo $when;?></div>
+</div>
+
+</div>
+</div>
+
 <?php } ?>

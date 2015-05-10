@@ -101,7 +101,7 @@ module.exports = function($, _) {
       }
 
       $branding.css({
-        opacity: '0'
+        opacity: '1.0'
       });
     }
   };

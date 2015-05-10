@@ -1,74 +1,89 @@
-<div class="row">
+<div class="w-section w-main ">
+    <div class="w-container">
+      <div class="w-row">
 
-    <div class="col-md-3" id="save-order" user-full-name="<?php echo $user['fullname'];?>">
+        <div class="w-col w-col-4" id="save-order" user-full-name="<?php echo $user['fullname'];?>">
 
-        <div class="well">
-            <table class="table">
-                <thead>
-                    <td></td>
-                    <td>
-                        <span id="table-number" style="cursor: pointer;" title="click me to choose table.">TABLE: click me..</span>
-                        <input id="input-table-number" type="number" min="0" max="<?php echo $restaurant['number_of_table'];?>" value="1">
-                    </td>
-                    <td></td>
-                </thead>
-                <tbody id="body-save-order">
+            <div class="w-order plan-wrapper">
+
+
+                <h4>Your Order</h4>
+                
+                <div id="body-save-order">
                     <template id="template-item-on-save-order">
-                        <tr item-id={{itemId}} style="cursor: pointer" class="subtract-amount-item" title="click me to -1">
-                            <td><span item-amount='{{itemAmount}}'>{{itemAmount}}</span></td>
-                            <td><span class="item-name">{{itemName}}</span></td>
-                            <td><span item-price='{{itemPrice}}'>{{itemPrice}}$</span></td>
-                            <!--<td><a class="btn btn-default btn-xs "><span class="glyphicon glyphicon-minus"></span></a></td>-->
-                        </tr>
+                        <div class="w-order-deatail">
+                            <div class="w-row">
+                                <div item-id={{itemId}} style="cursor: pointer" class="subtract-amount-item" title="Click to -1">
+                                    <div class="w-col w-col-2"><span item-amount='{{itemAmount}}'>{{itemAmount}}</span></div>
+                                    <div class="w-col w-col-5"><span class="item-name">{{itemName}}</span></div>
+                                    <div class="w-col w-col-3"><span item-price='{{itemPrice}}'>{{itemPrice}}$</span></div>
+                                    <div class="w-col w-col-2"><a class="button w-button-subtract" href="#">-</a></div>
+                                    <!--<td><a class="btn btn-default btn-xs "><span class="glyphicon glyphicon-minus"></span></a></td>-->
+                                </div>
+                            </div>
+                        </div>
                     </template>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td><span id="total-amount-price" total-price="">0$</span></td>
-                    </tr>
-                </tbody>
-
-            </table>
-        </div>
-
-        <a id="btn-save-order" class="btn btn-success btn-lg btn-block" restaurant-id="<?php echo $restaurant['id'];?>">
-            <span class="glyphicon glyphicon-ok"></span>Save
+                    <div class="w-order-total">
+                        <div class="w-row">
+                            <div class="w-col w-col-7">
+                              <div>Total</div>
+                          </div>
+                          <div class="w-col w-col-5 price-accent"><span id="total-amount-price" total-price="">0$</span></div>
+                      </div>
+                  </div>
+              </div>  
+          </div>
+          <label>Select Table:
+          <span id="table-number" style="cursor: pointer;"></span>
+            <input id="input-table-number" type="number" min="0" max="<?php echo $restaurant['number_of_table'];?>" value="1">
+            </label>
+          <a id="btn-save-order" style="float: right;" class="w-button log-in-button button" href="#" restaurant-id="<?php echo $restaurant['id'];?>">
+            Send Order
         </a>
 
     </div>
 
-    <div class="col-md-9" id="choose-items">
+
+    <div class="w-col w-col-8" id="choose-items">
 
         <?php
 
-            $query = "SELECT * FROM food_categories WHERE restaurant_id=$restaurant[id] ORDER BY id DESC";
-            $result = mysqli_query($dbc, $query);
+        $query = "SELECT * FROM food_categories WHERE restaurant_id=$restaurant[id] ORDER BY id DESC";
+        $result = mysqli_query($dbc, $query);
 
-            while($list_fc = mysqli_fetch_assoc($result)) { ?>
+        while($list_fc = mysqli_fetch_assoc($result)) { ?>
 
-                <div class="row">
-                    <h4 class="text-center"><b><?php echo $list_fc['name']; ?></b></h4>
+        <div class="w-category-menu">
+            <h4 class="w-food-item-heading"><b><?php echo $list_fc['name']; ?></b></h4>
 
-                    <?php
-                    $query2 = "SELECT * FROM food WHERE fc_id=$list_fc[id] ORDER BY id DESC";
-                    $result2 = mysqli_query($dbc, $query2);
+            <?php
+            $query2 = "SELECT * FROM food WHERE fc_id=$list_fc[id] ORDER BY id DESC";
+            $result2 = mysqli_query($dbc, $query2);
 
-                    while ($list_food = mysqli_fetch_assoc($result2)) { ?>
-                        <?php
-                            $itemName = $list_food['food_name'];
-                            $itemPrice = $list_food['food_price'];
-                            $itemId = $list_food['id'];
-                        ?>
-                        <div class="pin item-on-choose-order col-md-2" style="vertical-align: middle; padding:10px; margin:15px;" item-name="<?php echo $itemName?>"  item-price="<?php echo $itemPrice;?>" item-id="<?php echo $itemId?>">
-                            <div style="" align="center">
-                                <span><?php echo $itemName;?></span>
-                                <p><?php echo $itemPrice;?>$</p>
-                            </div>
-                        </div>
+            while ($list_food = mysqli_fetch_assoc($result2)) { ?>
+            <?php
+            $itemName = $list_food['food_name'];
+            $itemPrice = $list_food['food_price'];
+            $itemId = $list_food['id'];
+            ?>
+            <div class="w-row w-food-items">
+                <div class="w-col w-col-4">
+                  <div class="w-food-name"><?php echo $itemName;?></div>
+              </div>
+              <div class="w-col w-col-4">
+                  <div class="w-food-price">$<?php echo $itemPrice;?></div>
+              </div>
+              <div class="w-col w-col-4 w-clearfix item-on-choose-order" item-name="<?php echo $itemName?>"  item-price="<?php echo $itemPrice;?>" item-id="<?php echo $itemId?>"><a class="button w-edit-button hollow" href="#">Add to Order</a>
+              </div>
+          </div>
 
-                    <?php } ?>
-                </div>
 
-        <?php } ?>
+          <?php } ?>
+      </div>
 
+      <?php } ?>
+
+  </div>
+</div>
+</div>
 </div>

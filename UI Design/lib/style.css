@@ -1,4 +1,4 @@
-/* Generated on: Fri May 01 2015 17:52:38 GMT+0000 (UTC) */
+on: Fri May 01 2015 17:52:38 GMT+0000 (UTC) */
 /* ==========================================================================
    normalize.css v2.0.1, along with Webflow base CSS | MIT License | git.io/normalize
    ========================================================================== */
@@ -135,14 +135,36 @@ p {
   border-radius: 0px;
   background-color: #4dbd90;
   text-shadow: none;
+  border-radius: 1px;
+   box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px;
+  -webkit-transition: background-color 300ms ease, box-shadow 300ms ease, color 300ms ease;
+  transition: background-color 300ms ease, box-shadow 300ms ease, color 300ms ease;
+  font-family:'Roboto Slab', sans-serif;
 }
 .button.w-add-item:hover {
-  background-color: black;
+  background-color: #409c77;
+  color: white;
 }
 .button.new-order-button {
   border-radius: 0px;
   font-family:'Roboto Slab', sans-serif;
   text-shadow: none;
+}
+.button.w-button-subtract {
+  padding: 1px 5px;
+  text-shadow: none;
+}
+.button.w-button-subtract:hover {
+  background-color: #4dbd90;
+  text-shadow: none;
+}
+.button.button-inline-block {
+  display: inline-block;
+  text-shadow: none;
+}
+.button.button-inline-block:hover {
+  background-color: #489fd9;
+  box-shadow: rgba(0, 0, 0, 0.11) 0px 2px 1px 0px, #489fd9 0px 0px 0px 2px inset;
 }
 .logo-text {
   margin-top: 24px;
@@ -167,7 +189,7 @@ p {
 .nav-link {
   min-width: 90px;
   padding: 26px 17px;
-  float: right;
+  float: left;
   box-shadow: none;
   font-family: Montserrat, sans-serif;
   text-align: center;
@@ -278,6 +300,9 @@ p {
   margin-left: 0px;
   float: left;
 }
+.nav-menu.sign-up-menu {
+  float: right;
+}
 .footer-slogan {
   margin-bottom: 11px;
   color: #939596;
@@ -350,7 +375,7 @@ p {
   color: #d5d8db;
 }
 .newsletter-button:hover {
-  background-color: #489fd9;
+  background-color: #4dbd90;
   color: white;
 }
 .newsletter-form {
@@ -672,6 +697,26 @@ p {
 .w-food-items:hover {
   background-color: #dfe8e4;
 }
+.w-staff-items {
+  position: static;
+  display: block;
+  overflow-x: visible;
+  overflow-y: visible;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding-top: 7px;
+  padding-left: 30px;
+  padding-right: 14px;
+  padding-bottom: 7px;
+  float: none;
+  border-bottom: 1px solid #d6d6d6;
+  border-radius: 3px;
+  background-color: transparent;
+}
+.w-staff-items:hover {
+  background-color: #dfe8e4;
+}
 .w-food-name {
   margin-top: 5px;
   margin-left: 30px;
@@ -680,7 +725,7 @@ p {
 }
 .w-food-price {
   margin-top: 5px;
-  margin-left: 30px;
+
   font-weight: 500;
   text-align: left;
 }
@@ -699,7 +744,7 @@ p {
 .w-order {
   min-height: 0px;
   margin-right: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   margin-left: 5px;
   border-radius: 1px;
   background-color: white;
@@ -731,11 +776,174 @@ p {
   padding-right: 10px;
   font-size: 14px;
 }
+.w-staff-member {
+  margin-bottom: 10px;
+  background-color: transparent;
+}
+.w-staff-name {
+  font-size: 16px;
+  font-weight: 500;
+}
+.team-member {
+  margin-bottom: 16px;
+  border-radius: 100px;
+}
+.team-name {
+  text-align: center;
+}
 .italic-right {
   color: rgba(43, 43, 43, 0.49);
   font-size: 14px;
   font-style: italic;
   text-align: right;
+}
+.background {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #dfe8e4;
+}
+.login-card {
+  position: relative;
+  display: block;
+  width: 350px;
+  margin: 70px auto 0px;
+  padding: 30px;
+  border-radius: 3px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px;
+}
+.log-in-button {
+  display: inline-block;
+  margin-right: 0px;
+  padding-right: 20px;
+  padding-left: 20px;
+  float: left;
+  background-color: #4dbd90;
+}
+.login-link {
+  position: relative;
+  margin-top: 0px;
+  margin-bottom: auto;
+  float: right;
+  -webkit-transition: color 300ms ease;
+  transition: color 300ms ease;
+  color: rgba(145, 145, 145, 0.49);
+  font-size: 13px;
+  text-align: right;
+  text-decoration: none;
+}
+.login-link:hover {
+  color: #919191;
+}
+.login-link.have-account {
+  margin-top: 0px;
+  padding-top: 7px;
+  float: left;
+  font-size: 14px;
+}
+.col-no-padding {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+.first-name {
+  width: 50%;
+  float: left;
+}
+.last-name {
+  width: 50%;
+  float: left;
+  border-left-style: none;
+}
+.signup-sub-tittle {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  color: rgba(51, 51, 51, 0.8);
+}
+.check-box-text {
+  color: #969696;
+  font-size: 14px;
+}
+.log-in-button {
+  display: block;
+  margin-right: 0px;
+  padding-right: 20px;
+  padding-left: 20px;
+  float: left;
+  border-radius: 1px;
+  background-color: #4dbd90;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px 0px;
+  -webkit-transition: background-color 300ms ease, box-shadow 300ms ease, color 300ms ease;
+  transition: background-color 300ms ease, box-shadow 300ms ease, color 300ms ease;
+  font-family:'Roboto Slab', sans-serif;
+}
+.log-in-button:hover {
+  background-color: #409c77;
+}
+.button-delete {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding: 9px 12px;
+  float: right;
+  background-color: black;
+  box-shadow: rgba(0, 0, 0, 0.11) 0px 2px 1px 0px;
+  -webkit-transition: background-color 300ms ease, box-shadow 300ms ease, color 300ms ease;
+  transition: background-color 300ms ease, box-shadow 300ms ease, color 300ms ease;
+  font-family:'Roboto Slab', sans-serif;
+  color: #fffcfc;
+  font-size: 14px;
+  text-decoration: none;
+}
+.button-delete:hover {
+  background-color: #d94848;
+  color: #fffcfc;
+   text-decoration: none;
+}
+.button-delete.no-margin {
+  display: block;
+  margin-top: 1px;
+  float: none;
+  text-align: center;
+}
+.button-delete.no-margin.button-sm {
+  padding: 5px 15px;
+  font-size: 12px;
+}
+.button-edit {
+  display: block;
+  min-width: 100px;
+  margin-top: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding: 9px 12px;
+  float: right;
+  background-color: transparent;
+  box-shadow: black 0px 0px 0px 2px inset, rgba(0, 0, 0, 0.11) 1px 1px 1px 0px;
+  -webkit-transition: background-color 300ms ease, color 300ms ease, box-shadow 300ms ease;
+  transition: background-color 300ms ease, color 300ms ease, box-shadow 300ms ease;
+  font-family:'Roboto Slab', sans-serif;
+  color: black;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+.button-edit:hover {
+  background-color: #4dbd90;
+  box-shadow: #4dbd90 0px 0px 0px 2px inset, rgba(0, 0, 0, 0.11) 1px 1px 3px 0px;
+  font-family:'Roboto Slab', sans-serif;
+  color: white;
+  text-decoration: none;
+}
+.button-edit.no-margin {
+  display: block;
+  min-width: 0px;
+  margin-top: 1px;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 5px 15px;
+  float: none;
+  font-size: 12px;
 }
 html.w-mod-js *[data-ix="fade-in-on-load"] {
   opacity: 0;

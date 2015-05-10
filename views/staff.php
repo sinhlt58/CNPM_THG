@@ -1,6 +1,6 @@
-<div class="row">
-
-    <div class="col-lg-6">
+<div class="w-section">
+    <div class="w-container">
+      <h4>Add Staff:</h4>
 
         <div id="errors">
             <p>empty email</p>
@@ -9,14 +9,13 @@
             <p>add successfully</p>
         </div>
 
-        <div class="input-group">
-          <span class="input-group-btn">
-            <button id="add-staff" class="btn btn-default" type="button" restaurant-id="<?php echo $restaurant['id'];?>">Add</button>
-          </span>
-            <input id="search-email" name="search_email" type="email" class="form-control" placeholder="Search for email...">
+        <div class="w-form newsletter-form">
+            <input id="search-email" name="search_email" type="email" class="w-input newsletter-field form-control" placeholder="Search for email...">
+            <input id="add-staff" class="w-button newsletter-button" type="button" value="Add" restaurant-id="<?php echo $restaurant['id'];?>">
         </div><!-- /input-group -->
         <br>
         <br>
+        <h4>Your Current Staffs:</h4>
         <div id="list-staff" class="list-group">
 
             <?php
@@ -35,9 +34,9 @@
 
                     ?>
 
-                    <li class="list-group-item">
-                        <p><?php echo $data_user['first_name'].' '.$data_user['last_name']; ?></p>
-                        <p class="email-item"><?php echo $data_user['email'].'<br>'; ?></p>
+                    <li class="w-row w-staff-items">
+                        <p class="w-staff-name"><?php echo $data_user['first_name'].' '.$data_user['last_name']; ?></p>
+                        <p class="w-staff-email email-item"><?php echo $data_user['email'].'<br>'; ?></p>
                     </li>
 
             <?php  } ?>
@@ -45,15 +44,11 @@
         </div>
 
         <template id="staff-item">
-            <li class="list-group-item">
-                <p>{{fullName}}</p>
-                <p class="email-item">{{email}}</p>
+            <li class="w-row w-staff-items">
+                <p class="w-staff-name">{{fullName}}</p>
+                <p class="w-staff-email email-item">{{email}}</p>
             </li>
         </template>
-
     </div>
-
-
 </div>
-
 <script src="js/staff.js" type="text/javascript"></script>

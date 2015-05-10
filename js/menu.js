@@ -1,14 +1,14 @@
-
 $(document).ready(function(){
     //=============================*MENU*========================================
     var url = "ajax/menu.php";
     var $menu = $('#menu');
+    var $menu2 = $('#menu2');
 
     //=============START FOOD CATEGORIES=========================================
     //Setup.
     var typeRequestFc;
     var addFoodCategoryTemplate = $('#categories-template').html();//Cai nay la ve javascript mustache, tao template cho hop ly.
-
+    var addFoodCategoryTemplate2 = $('#categories-template2').html();
     //Add New Category.
     $('#add-fc').on('click', function(){
         typeRequestFc = "add";
@@ -24,6 +24,8 @@ $(document).ready(function(){
             dataType: 'json',
             success: function(newFoodCategory){//lay du lieu tu server roi in ra tag.
                 $menu.find('div').first().after(Mustache.render(addFoodCategoryTemplate, newFoodCategory));
+                $menu2.find('div').first().after(Mustache.render(addFoodCategoryTemplate2, newFoodCategory));
+                $.getScript('UI Design/lib/webflow.2a44966e9.js'); //load lai javascript sau khi them category de tab hoat dong
             },
             error: function(){
                 alert('error adding categories.')
@@ -35,8 +37,8 @@ $(document).ready(function(){
     //Delete FoodCategory.
     $menu.delegate('.b-delete-fc', 'click', function(){
         typeRequestFc = "delete";
-        var $divNamefc = $(this).closest('.delete-fc');
-        var $allDivfood = $divNamefc.nextUntil('.delete-fc');
+        var $divNamefc = $("div").find('.w--current')
+        var $allDivfood = $(this).closest('.w--tab-active');
 
         //remove on database.
         var fcId = $(this).attr('fc-id');
@@ -47,28 +49,27 @@ $(document).ready(function(){
         $allDivfood.fadeOut(1000, function(){
             (this).remove();
         });
-        $divNamefc.fadeOut(2500, function(){
+        $divNamefc.fadeOut(1000, function(){
             (this).remove();
         });
     });
 
     //Edit FoodCategory.
-    $menu.delegate('.b-edit-fc', 'click', function(){
-        var $edit = $(this).closest('.row');
+    /*$menu.delegate('.b-edit-fc', 'click', function(){
+        var $edit = $(this).closest('.w--tab-active');
         $edit.addClass('edit-fc');
-    });
+    });*/
 
     $menu.delegate('.b-save-fc', 'click', function(){
         typeRequestFc = "edit";
-        var $nameFc = $(this).closest('.row').find('input');
+        var $nameFc = $(this).closest('.w--tab-active').find('input');
         var nameFc = $nameFc.val();
         var fcId = $(this).attr('fc-id');
 
         $.get(url + '?fc-id='+fcId + '&nameFc='+nameFc +'&typeRequestFc='+typeRequestFc);
-
-        $nameFc.prev().html('<strong class="no-edit-fc">'+nameFc+'</strong>');
-        var $edit = $(this).closest('.row');
-        $edit.removeClass('edit-fc');
+        $("div").find(".w--current").html('<div class="no-edit-fc">'+nameFc+'</div>');
+        //var $edit = $(this).closest('.row');
+        //$edit.removeClass('edit-fc');
     });
     //=============END FOOD CATEGORIES===========================================
 
@@ -81,7 +82,7 @@ $(document).ready(function(){
     //Add a new food item.
     var $theRowClosest;// dung chung cho 2 event ben duoi.
     $menu.delegate('.b-add-fi', 'click', function(){
-        $theRowClosest = $(this).closest('.row');
+        $theRowClosest = $(this).closest('.w-row');
         //lay food category id.
         var fcId = $(this).attr('fc-id');
         $('#add-fi').attr('fc-id', fcId);

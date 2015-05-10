@@ -1,4 +1,6 @@
-<div class="row">
+<div class="w-section background">
+<div class="w-container">
+<h4>Choose the restaurant that you work for:</h4>
         <?php
 
             $query = "SELECT * FROM users_restaurants WHERE user_id = $user[id]";
@@ -14,8 +16,6 @@
                     $restaurant = mysqli_fetch_assoc($result2);
                     $restaurantId = $restaurant['id'];
                     $restaurantName = $restaurant['name'];
-
-
                     if ($list_restaurants_id['role'] != 0){
                         $restaurantName .= '<br>'.'Admin: '.$restaurant['name_boss'];
                     }
@@ -24,13 +24,11 @@
                     <form action="<?php echo NAME_DOMAIN;?>/restaurants" method="POST">
                         <input type="number" name="restaurantId" value="<?php echo $restaurantId;?>" style="display: none;">
                         <button type="submit" class="btn btn-default">
-                            <div style="width: 200px; height: 200px;">
-                                <?php echo $restaurantName; ?>
-                            </div>
+                            <div style="width: 200px; height: 200px;"><?php echo $restaurantName; ?></div>
                         </button>
                     </form>
                 </div>
 
         <?php } ?>
-
+</div>
 </div>
