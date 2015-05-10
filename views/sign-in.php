@@ -1,4 +1,4 @@
-<?php /*Tai khoan mac dinh thg@gmail.com pass: 123*/
+﻿<?php /*Tai khoan mac dinh thg@gmail.com pass: 123*/
 
 
 ?>
@@ -17,7 +17,7 @@
             <div class="w-col w-col-4 w-col-small-6 w-col-tiny-6 w-clearfix col-no-padding">
               <input class="w-button log-in-button button" type="submit" value="Log In" id="sign-in">
             </div>
-            <div class="w-col w-col-8 w-col-small-6 w-col-tiny-6 w-clearfix"><a class="login-link" href="sign-up">Don’t have an account?</a><a class="login-link" href="#">Forgot Password?</a>
+            <div class="w-col w-col-8 w-col-small-6 w-col-tiny-6 w-clearfix"><a class="login-link" href="sign-up">Don't have an account?</a><a class="login-link" href="#">Forgot Password?</a>
             </div>
           </div>
         </form>
