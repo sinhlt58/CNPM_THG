@@ -1,6 +1,6 @@
 <?php
-require_once('../functions/data.php');
-require_once('ConnectionClass.php');
+require_once('/../functions/data.php');
+require_once('/../classes/ConnectionClass.php');
 
 class DataUserTest extends PHPUnit_Framework_TestCase{
 
@@ -15,12 +15,11 @@ class DataUserTest extends PHPUnit_Framework_TestCase{
 
         $dataWithId = data_user($this->dbc, 9);
 
-        $this->assertEquals('admin', $dataWithId['first_name']);
-        $this->assertEquals('admin', $dataWithId['last_name']);
-        $this->assertEquals('admin admin', $dataWithId['fullname']);
-        $this->assertEquals('admin, admin', $dataWithId['fullname_reverse']);
+        $this->assertEquals('thg', $dataWithId['first_name']);
+        $this->assertEquals('thg', $dataWithId['last_name']);
+        $this->assertEquals('thg thg', $dataWithId['fullname']);
+        $this->assertEquals('thg, thg', $dataWithId['fullname_reverse']);
         $this->assertEquals('thg@gmail.com', $dataWithId['email']);
-
 
     }
 
@@ -28,10 +27,10 @@ class DataUserTest extends PHPUnit_Framework_TestCase{
 
         $dataWithEmail = data_user($this->dbc, "thg@gmail.com");
 
-        $this->assertEquals('admin', $dataWithEmail['first_name']);
-        $this->assertEquals('admin', $dataWithEmail['last_name']);
-        $this->assertEquals('admin admin', $dataWithEmail['fullname']);
-        $this->assertEquals('admin, admin', $dataWithEmail['fullname_reverse']);
+        $this->assertEquals('thg', $dataWithEmail['first_name']);
+        $this->assertEquals('thg', $dataWithEmail['last_name']);
+        $this->assertEquals('thg thg', $dataWithEmail['fullname']);
+        $this->assertEquals('thg, thg', $dataWithEmail['fullname_reverse']);
         $this->assertEquals(9, $dataWithEmail['id']);
     }
 
@@ -57,7 +56,7 @@ class DataUserTest extends PHPUnit_Framework_TestCase{
 
     public function testGetDataOfRestaurant(){
         $_SESSION['restaurantId'] = 1;
-        $compare = array('id' => 1, 'name' => 'RESTAURANT THG', 'number_of_table' => 100);
+        $compare = array('id' => 1, 'name' => 'RESTAURANT THG', 'number_of_table' => 100, 'name_boss' => 'thg@gmail.com');
         $this->assertEquals($compare, restaurant_data($this->dbc));
     }
 

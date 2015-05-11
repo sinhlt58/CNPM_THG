@@ -1,5 +1,5 @@
 <?php
-require_once('ConnectionClass.php');
+require_once('/../classes/ConnectionClass.php');
 require_once('../functions/sandbox.php');
 
 class setData{
@@ -50,6 +50,5 @@ class TestSandBox extends PHPUnit_Framework_TestCase{
     }
 
 }
-
 
 ?>

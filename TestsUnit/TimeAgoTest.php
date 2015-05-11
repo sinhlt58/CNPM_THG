@@ -5,7 +5,7 @@
  * Date: 5/7/2015
  * Time: 6:18 PM
  */
-require_once('../classes/time_ago.php');
+require_once('/../classes/time_ago.php');
 
 class TimeAgoTest extends PHPUnit_Framework_TestCase{
     public function test_case_normal(){
@@ -124,3 +124,6 @@ class TimeAgoTest extends PHPUnit_Framework_TestCase{
         $this->assertEquals('2 weeks ago', $result);
     }
 }
+
+
+?>
