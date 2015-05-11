@@ -22,6 +22,7 @@ Feature: As a waiter/waitress (already had an account in database)
       And I fill in "password" with "123"
       And I press "Submit"
     Then I should see "something wrong"
+
   Scenario: Login unsuccessfully (wrong password)
     When I fill in "email" with "thg@gmail.com"
       And I fill in "password" with "123wrong"

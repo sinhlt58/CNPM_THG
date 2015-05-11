@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 10, 2015 at 03:48 PM
+-- Generation Time: May 11, 2015 at 04:17 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -31,22 +31,18 @@ CREATE TABLE IF NOT EXISTS `food` (
   `fc_id` int(11) NOT NULL,
   `food_name` varchar(50) NOT NULL,
   `food_price` double NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `food`
 --
 
 INSERT INTO `food` (`id`, `fc_id`, `food_name`, `food_price`) VALUES
-(4, 2, 'Ra Muon', 200),
-(5, 2, 'Rau Cai', 100),
-(6, 2, 'Rau Sup No', 500),
-(7, 3, 'Tom Hum', 140),
-(8, 3, 'Cua Nuong', 345),
-(11, 6, 'Kem Tuoi', 456),
-(12, 6, 'Nuoc Cam', 999),
-(13, 7, 'Nuoc Cam', 123),
-(14, 7, 'Nuoc Chanh', 456);
+(15, 8, 'Tom Su', 456),
+(16, 9, 'Berry', 456),
+(17, 9, 'Kem tuoi', 666),
+(18, 8, 'Ca sau', 555),
+(19, 10, 'Rau cai', 888);
 
 -- --------------------------------------------------------
 
@@ -58,17 +54,16 @@ CREATE TABLE IF NOT EXISTS `food_categories` (
 `id` int(11) NOT NULL,
   `name` varchar(60) NOT NULL,
   `restaurant_id` int(40) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `food_categories`
 --
 
 INSERT INTO `food_categories` (`id`, `name`, `restaurant_id`) VALUES
-(2, 'Rau', 1),
-(3, 'Main', 1),
-(6, 'Trang Mieng 2', 1),
-(7, 'Nuoc Giai Khat', 2);
+(8, 'Main', 1),
+(9, 'Trang Mieng', 1),
+(10, 'Cac loai rau', 1);
 
 -- --------------------------------------------------------
 
@@ -81,26 +76,17 @@ CREATE TABLE IF NOT EXISTS `food_orders` (
   `order_id` int(40) NOT NULL,
   `food_id` int(40) NOT NULL,
   `amount` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=256 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=260 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `food_orders`
 --
 
 INSERT INTO `food_orders` (`id`, `order_id`, `food_id`, `amount`) VALUES
-(243, 65, 12, 1),
-(244, 66, 7, 1),
-(245, 66, 8, 1),
-(246, 66, 12, 1),
-(247, 66, 11, 3),
-(248, 67, 8, 1),
-(249, 67, 7, 1),
-(250, 67, 11, 1),
-(251, 67, 12, 3),
-(252, 68, 7, 1),
-(253, 68, 8, 1),
-(254, 68, 12, 1),
-(255, 68, 11, 1);
+(256, 69, 18, 2),
+(257, 69, 16, 3),
+(258, 69, 17, 6),
+(259, 69, 19, 7);
 
 -- --------------------------------------------------------
 
@@ -115,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `navigation` (
   `target` varchar(30) NOT NULL,
   `position` int(3) NOT NULL,
   `status` int(2) NOT NULL DEFAULT '1'
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `navigation`
@@ -141,17 +127,14 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `total_price` double NOT NULL,
   `created` int(40) NOT NULL,
   `creator` varchar(40) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orders`
 --
 
 INSERT INTO `orders` (`id`, `restaurant_id`, `table_order`, `total_price`, `created`, `creator`) VALUES
-(65, 1, 1, 999, 1426763014, 'Waiter Waiter'),
-(66, 1, 46, 2852, 1426763128, 'admin admin'),
-(67, 1, 6, 3938, 1426772890, 'Waiter Waiter'),
-(68, 1, 12, 1940, 1430299780, 'Waiter Waiter');
+(69, 1, 56, 12690, 1431310556, 'waiter waiter');
 
 -- --------------------------------------------------------
 
@@ -219,7 +202,7 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
   `name` varchar(45) NOT NULL,
   `number_of_table` int(40) NOT NULL,
   `name_boss` varchar(40) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `restaurants`
@@ -227,9 +210,7 @@ CREATE TABLE IF NOT EXISTS `restaurants` (
 
 INSERT INTO `restaurants` (`id`, `name`, `number_of_table`, `name_boss`) VALUES
 (1, 'RESTAURANT THG', 100, 'thg@gmail.com'),
-(8, 'My restaurant', 100, 'water1@gmail.com'),
-(9, 'My restaurant', 100, 'waiter2@gmail.com'),
-(10, 'My restaurant', 100, '');
+(13, 'My restaurant', 100, 'waiter@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -265,17 +246,15 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(200) NOT NULL,
   `status` int(1) NOT NULL DEFAULT '1',
   `avatar` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `status`, `avatar`) VALUES
-(9, 'admin', 'admin', 'thg@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, ''),
-(17, 'waiter', '1', 'water1@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, ''),
-(18, 'waiter', '2', 'waiter2@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, ''),
-(19, 'waiter', 'waiter', 'waiter@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, '');
+(9, 'thg', 'thg', 'thg@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, ''),
+(24, 'waiter', 'waiter', 'waiter@gmail.com', '40bd001563085fc35165329ea1ff5c5ecbdbbeef', 1, '');
 
 -- --------------------------------------------------------
 
@@ -288,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `users_restaurants` (
   `user_id` int(40) NOT NULL,
   `restaurant_id` int(40) NOT NULL,
   `role` int(10) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users_restaurants`
@@ -296,13 +275,8 @@ CREATE TABLE IF NOT EXISTS `users_restaurants` (
 
 INSERT INTO `users_restaurants` (`id`, `user_id`, `restaurant_id`, `role`) VALUES
 (1, 9, 1, 0),
-(13, 17, 8, 0),
-(14, 17, 1, 1),
-(15, 18, 9, 0),
-(16, 18, 1, 1),
-(17, 18, 8, 1),
-(18, 19, 10, 0),
-(19, 19, 1, 1);
+(24, 24, 13, 0),
+(25, 24, 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -382,27 +356,27 @@ ALTER TABLE `users_restaurants`
 -- AUTO_INCREMENT for table `food`
 --
 ALTER TABLE `food`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `food_categories`
 --
 ALTER TABLE `food_categories`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `food_orders`
 --
 ALTER TABLE `food_orders`
-MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=256;
+MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=260;
 --
 -- AUTO_INCREMENT for table `navigation`
 --
 ALTER TABLE `navigation`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=69;
+MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=70;
 --
 -- AUTO_INCREMENT for table `posts`
 --
@@ -417,17 +391,17 @@ MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `restaurants`
 --
 ALTER TABLE `restaurants`
-MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `users_restaurants`
 --
 ALTER TABLE `users_restaurants`
-MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=20;
+MODIFY `id` int(40) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

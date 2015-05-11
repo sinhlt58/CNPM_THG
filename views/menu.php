@@ -13,7 +13,8 @@
 									<div>Categories</div>
 								</div>
 							</div>
-							<div class="w-col w-col-6 w-add-button"><a class="w-add-button-text" data-toggle="modal" data-target="#modal-add-fc" href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> New Category</a>
+							<div class="w-col w-col-6 w-add-button">
+                                <a class="w-add-button-text" data-toggle="modal" data-target="#modal-add-fc" href="#"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>New</a>
 							</div>
 						</div>
 					</div>
@@ -68,7 +69,7 @@
 						</div>
 						<div class="w-col w-col-4">
 							<p class="no-edit-fi food-price w-food-price"><?php echo $list_food['food_price']; ?></p>
-							<input type="text" class="edit-fi food-price w-food-price" value="<?php echo $list_food['food_price']; ?>"/>
+							<input type="number" class="edit-fi food-price w-food-price" value="<?php echo $list_food['food_price']; ?>"/>
 						</div>							
 						<div class="w-col w-col-2">
 							<a class="button-edit no-margin button-sm b-edit-fi no-edit-fi" href="#">Edit</a>
@@ -134,7 +135,7 @@
 		</div>
 		<div class="w-col w-col-4">
 			<p class="no-edit-fi food-price w-food-price">{{fi_price}}</p>
-			<input type="text" class="edit-fi food-price w-food-price" value="{{fi_price}}"/>
+			<input type="number" class="edit-fi food-price w-food-price" value="{{fi_price}}"/>
 		</div>							
 		<div class="w-col w-col-2">
 			<a class="button-edit no-margin button-sm b-edit-fi no-edit-fi" href="#">Edit</a>
@@ -161,16 +162,17 @@
         			<h4 class="modal-title" id="exampleModalLabel">New Food Category</h4>
         			<div id="show"></div>					
 				</div>
-				
-				<div class="modal-body">
-		            <label for="fc-name" class="control-label">Name Category:</label>
-		            <input type="text" class="form-control" value="here" id="fc-name" restaurant-id='<?php echo $restaurant['id'];?>'>
-				</div>
-				
-				<div class="modal-footer">
-			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			        <button type="button" class="btn btn-primary" data-dismiss="modal" id="add-fc" >Save changes</button>
-				</div>
+
+                    <div class="modal-body">
+                        <label for="fc-name" class="control-label">Name Category:</label>
+                        <input type="text" class="form-control" value="" id="fc-name" restaurant-id='<?php echo $restaurant['id'];?>'>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" data-dismiss="modal" id="add-fc" >Save changes</button>
+                    </div>
+
 			</div>
 		</div>
 	</div>
@@ -183,14 +185,14 @@
         			<h4 class="modal-title" id="exampleModalLabel">New Food Item</h4>
         			<div id="show"></div>					
 				</div>
-				
+
 				<div class="modal-body">
 		            <label for="fi-name" class="control-label">Name:</label>
 		            <input type="text" class="form-control" value="" id="fi-name">
 		            <label for="fi-price" class="control-label">Price:</label>
-		            <input type="text" class="form-control" value="" id="fi-price">					
+		            <input type="text" class="form-control" value="" id="fi-price">
 				</div>
-				
+
 				<div class="modal-footer">
 			        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			        <button type="button" class="btn btn-primary" data-dismiss="modal" id="add-fi" fi-id="">Save changes</button>

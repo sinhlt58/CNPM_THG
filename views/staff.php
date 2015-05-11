@@ -10,8 +10,10 @@
         </div>
 
         <div class="w-form newsletter-form">
-            <input id="search-email" name="search_email" type="email" class="w-input newsletter-field form-control" placeholder="Search for email...">
-            <input id="add-staff" class="w-button newsletter-button" type="button" value="Add" restaurant-id="<?php echo $restaurant['id'];?>">
+            <form action="#">
+                <input id="search-email" name="search_email" type="email" class="w-input newsletter-field form-control" placeholder="Search for email...">
+                <button id="add-staff" class="w-button newsletter-button" type="button" value="Add" restaurant-id="<?php echo $restaurant['id'];?>">Add</button>
+            </form>
         </div><!-- /input-group -->
         <br>
         <br>

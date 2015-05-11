@@ -45,9 +45,10 @@ function validSignUp($dbc) {
                 $last_insert_user_id = mysqli_insert_id($dbc);
                 $default_name_restaurant = "My restaurant";
                 $default_number_of_tables = 100;
+                $boss_name = $_POST['signup_email'];
 
                 //insert to restaurants table.
-                $query2 = "INSERT INTO restaurants (name, number_of_table) VALUES ('$default_name_restaurant', $default_number_of_tables)";
+                $query2 = "INSERT INTO restaurants (name, number_of_table, name_boss) VALUES ('$default_name_restaurant', $default_number_of_tables, '$boss_name')";
                 $result2 = mysqli_query($dbc, $query2);
                 $last_insert_restaurant_id = mysqli_insert_id($dbc);
 
