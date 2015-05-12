@@ -23,3 +23,6 @@ https://www.youtube.com/watch?v=G0WVqSxnY90&feature=youtu.be
 
 Sprint 3 review:
 https://www.youtube.com/watch?v=RbNBQJmr8es&feature=youtu.be
+
+Representation & Introduction:
+https://prezi.com/uqeajmetsw0q/edit/#39_95982358
