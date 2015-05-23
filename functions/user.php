@@ -39,7 +39,7 @@ function validSignUp($dbc) {
 
         if(mysqli_num_rows($run) == 0){
             if ($_POST['signup_password'] == $_POST['signup_retype_password']) {
-                $query = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$_POST[first_name]', '$_POST[last_name]', '$_POST[signup_email]', SHA1($_POST[signup_password]))";
+                $query = "INSERT INTO users (first_name, last_name, email, password) VALUES ('$_POST[first_name]', '$_POST[last_name]', '$_POST[signup_email]', '$_POST[signup_password]')";
                 $result = mysqli_query($dbc, $query);
 
                 $last_insert_user_id = mysqli_insert_id($dbc);
