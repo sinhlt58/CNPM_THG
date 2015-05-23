@@ -3,7 +3,7 @@
 function check_user($dbc){
     if (isset($_POST['email'], $_POST['password'])) {
 
-        $query = "SELECT * FROM users WHERE email = '$_POST[email]' AND password = SHA1($_POST[password])";
+        $query = "SELECT * FROM users WHERE email = '$_POST[email]' AND password = $_POST[password]";
         $run = mysqli_query($dbc, $query);
 
         if($run == false)
